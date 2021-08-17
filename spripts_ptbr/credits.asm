@@ -180,7 +180,7 @@ credits_0008:
  newline()
  newpage()
  startOne()
-      gameText("Animators")
+      gameText("Animadores")
  newline()
  newline()
  startTwo()
