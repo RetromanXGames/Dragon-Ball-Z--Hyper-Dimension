@@ -1,5 +1,5 @@
 beans_0000:
-    gameText("Kuririn: Coma essa semente dos Deuses!")
+    gameText("Kuririn: Coma essa semente dos Deuses")
  endstring()
  nullTwo()
  endstring()
