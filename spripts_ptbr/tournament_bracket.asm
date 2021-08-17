@@ -45,7 +45,7 @@ tournament_bracket_0003:
 tournament_bracket_0004:
     gameText("E o campeão é")
 newline()
-    gameText("               ") 
+    gameText("               ")
  characterNumberThree()
     gameText(" ")
  endstring()
