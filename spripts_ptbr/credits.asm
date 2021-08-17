@@ -152,7 +152,7 @@ credits_0007:
  newline()
  newline()
  startOne()
-      gameText("Composers")
+      gameText("Compositores")
  newline()
  newpage()
  newline()
