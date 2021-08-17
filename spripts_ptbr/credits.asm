@@ -53,7 +53,7 @@ credits_0003:
  newline()
  newpage()
  startOne()
-      gameText("Coordinators")
+      gameText("Coordenadores")
  newline()
  newline()
  startTwo()

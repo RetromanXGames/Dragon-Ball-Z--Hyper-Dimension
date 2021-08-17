@@ -251,6 +251,14 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
 
 
+//xxxxxxxxxxxxxxxxxxxxx   Combat Status   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//---------------------   WIN/LOOSE/DRAW   ----------------------------------	
+//----------------   Vitórias/Derrotas/Empates   ----------------------------
+    origin $D800
+	insert "gfx_ptbr\win_lose_draw.bin"
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
 //xxxxxxxxxxxxxxxxxxxxxxxxx    Font    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //----------------------  Character Table    --------------------------------	
 //-------------------   Tabela de Caracteres    -----------------------------
