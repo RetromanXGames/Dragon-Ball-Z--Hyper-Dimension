@@ -5,4 +5,4 @@ option_name:
  newline()
     gameText("Batalha Rápida....................")
  newline()
-    gameText("Contra-ataque......................")
+    gameText("Contra-ataque......................") 

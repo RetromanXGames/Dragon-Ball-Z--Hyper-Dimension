@@ -3,5 +3,5 @@ menu_versus:
     gameText("2  Jogadores")
  newline()
  startOne()
-    gameText("Contra o CPU")
+    gameText("Contra o CPU") 
  endstring()

@@ -16,5 +16,5 @@ menu_title:
  newline()
 
  startOne()
-    gameText("Opções")
+    gameText("Opções") 
  endstring()

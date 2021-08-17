@@ -623,7 +623,7 @@ credits_0026:
       gameText("Yurie Kobayashi")
  newline()
  startOne()
-      gameText("Yutaka Itop")
+      gameText("Yutaka Ito")
  endstring()
 
  

@@ -145,7 +145,7 @@ soundtrack_0020:
 
 
 soundtrack_0021:
-    gameText(".........Desligar")
+    gameText(".........Desligar") 
  endstring() 
  endstring()
  endstring()

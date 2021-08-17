@@ -7,5 +7,5 @@ menu_tournament:
  newline()
  newline()
 
-    gameText("Botão x : Aleatório")
+    gameText("Botão x : Aleatório") 
  endstring()

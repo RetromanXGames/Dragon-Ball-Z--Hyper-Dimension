@@ -47,5 +47,5 @@ options_0006:
 
 
 options_0007:
-    gameText("Desl.")
+    gameText("Desl.") 
  endstring()

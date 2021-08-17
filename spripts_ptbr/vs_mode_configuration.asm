@@ -9,7 +9,7 @@ vs_mode_configuration:
  newline()
     gameText("Nível do Computador...........")
  newline()
-    gameText("Trilha Sonora.......")
+    gameText("Trilha Sonora.......") 
  endstring()
  vsOptionOne()
  vsOptionTwo()
