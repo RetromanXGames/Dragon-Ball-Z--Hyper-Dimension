@@ -12,7 +12,7 @@ menu_title:
  newline()
 
  startOne()
-    gameText(" Treinamento")
+    gameText("Treinamento")
  newline()
 
  startOne()
