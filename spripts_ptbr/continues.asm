@@ -8,7 +8,7 @@ beans_0000:
 
 beans_0001:
  startOne()
-    gameText("Simm")
+    gameText("Sim")
  newline()
  startOne()
     gameText("Não")
