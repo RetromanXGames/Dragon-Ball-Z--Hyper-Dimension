@@ -1,7 +1,7 @@
 
 credits_0000: 
  startOne()
-      gameText("Staff")
+      gameText("Equipe")
  endstring()
 
  
@@ -14,7 +14,7 @@ credits_0001:
  newpage()
  newline()
  startOne()
-      gameText("Executive Producer")
+      gameText("Produtor Executivo")
  newline()
  newline()
  startTwo()
