@@ -312,6 +312,12 @@
     origin $6000
 	insert "gfx_ptbr\names2.bin"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+//xxxxxxxxxxxxxxxxxx   READY/FIGHT!/K.O./DOUBLE K.O.   xxxxxxxxxxxxxxxxxxxxxx
+	origin $2ABCA9
+	insert "gfx_ptbr\ready.bin"
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	
 
 
@@ -329,7 +335,7 @@
 //---------------   Desvio do Gráfico Hyper Dimension     -------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     origin $010134  // Endereço de Origem do Desvio Convertido do Endereço SNES
-  	jml $A18000     // Desvio
+  	jml    $A18000  // Desvio
 	
 	origin $302000  // <-- DMA SRC
 hyperdiminension_grafico:
@@ -340,8 +346,26 @@ hyperdiminension_grafico_end:
 	include "asm\hyper_dimension.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
-//---------------   Deviation from Ready Ready Graph   ----------------------
+//--------------   Deviation from P1 and P2     -----------------
+//---------------   Desvio do Gráfico Hyper Dimension     -------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//    origin $010134  // Endereço de Origem do Desvio Convertido do Endereço SNES
+//  	jml    $A18000  // Desvio
+//	
+//	origin $302000  // <-- DMA SRC
+//p1_p2_grafico:
+//	insert "gfx_ptbr\p1_p2.bin"
+//p1_p2_grafico_end:
+//
+//    origin $308000
+//	include "asm\p1_p2.asm"
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
+//--------------   Deviation from Ready and Fight Graph   -------------------
 //-------------------   Desvio do Gráfico Ready   ---------------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     origin $0700DE
@@ -349,27 +373,112 @@ hyperdiminension_grafico_end:
 	
 	origin $302A00
 ready_grafico:
-	insert "gfx_ptbr\ready.bin"
+	insert "gfx_ptbr\ready_fight.bin"
 ready_grafico_end:
 
     origin $303400
 	include "asm\ready.asm"
+
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //---------------   Tilemap Deviation from Ready Graph   --------------------
 //---------------   Desvio do Tilemap do Gráfico Ready   --------------------
+	origin $2AC69A
+	// [OPTS]   [Tile]    [Y]  [X]
+	//db $21,  $F2,   $35,    $00
+	dd $007C0000 // #00 Sprite 8x8
+	dd $007C0000 // #01 Sprite 8x8
+	dd $007C0000 // #02 Sprite 8x8
+	dd $007C0000 // #03 Sprite 8x8
+	dd $007C0000 // #04 Sprite 8x8
+	dd $007C0000 // #05 Sprite 8x8
+	dd $007C0000 // #06 Sprite 8x8
+	dd $007C0000 // #07 Sprite 8x8
+	dd $004A0020 // #08 Sprite 8x8
+	dd $00490018 // #09 Sprite 8x8
+	dd $003F0010 // #10 Sprite 8x8
+	dd $003E0008 // #11 Sprite 8x8
+	dd $003D0000 // #12 Sprite 8x8
+	dd $003C00F8 // #13 Sprite 8x8
+	dd $003B00F0 // #14 Sprite 8x8
+	dd $003A00E8 // #15 Sprite 8x8
+	dd $003900E0 // #16 Sprite 8x8
+	dd $0048F820 // #18 Sprite 8x8
+	dd $0038F020 // #18 Sprite 8x8 - !
+	dd $1036F010 // #19 Sprite 16x16 - M
+	dd $1034F000 // #20 Sprite 16x16 - E
+	dd $1032F0F0 // #21 Sprite 16x16 - UT
+	dd $1030F0E0 // #22 Sprite 16x16 - LU
+	
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//
-//	  origin $01018A
-//    jml    $A0E560
-//    origin $306100
-//endian msb
-//tilemap_ready:
-//insert "tilemap\ready.bin"
-//tilemap_ready_end:
-//endian lsb
-// origin $306560
-//include "asm\tilemap_ready.asm"
+
+
+
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//----------------   Tilemap from Sprites Double K.O.   ---------------------
+//---------------   Desvio do Tilemap do Gráfico Ready   --------------------
+//	origin $2AC69A
+//	// [OPTS]   [Tile]    [Y]  [X]
+//	//db $21,  $F2,   $35,    $00
+//	dd $007C0000 // #00 Sprite 8x8
+//	dd $007C0000 // #01 Sprite 8x8
+//	dd $007C0000 // #02 Sprite 8x8
+//	dd $007C0000 // #03 Sprite 8x8
+//	dd $007C0000 // #04 Sprite 8x8
+//	dd $007C0000 // #05 Sprite 8x8
+//	dd $007C0000 // #06 Sprite 8x8
+//	dd $007C0000 // #07 Sprite 8x8
+//	dd $004A0020 // #08 Sprite 8x8
+//	dd $00490018 // #09 Sprite 8x8
+//	dd $003F0010 // #10 Sprite 8x8
+//	dd $003E0008 // #11 Sprite 8x8
+//	dd $003D0000 // #12 Sprite 8x8
+//	dd $003C00F8 // #13 Sprite 8x8
+//	dd $003B00F0 // #14 Sprite 8x8
+//	dd $003A00E8 // #15 Sprite 8x8
+//	dd $003900E0 // #16 Sprite 8x8
+//	dd $0048F820 // #18 Sprite 8x8
+//	dd $0038F020 // #18 Sprite 8x8 - !
+//	dd $1036F010 // #19 Sprite 16x16 - M
+//	dd $1034F000 // #20 Sprite 16x16 - E
+//	dd $1032F0F0 // #21 Sprite 16x16 - UT
+//	dd $1030F0E0 // #22 Sprite 16x16 - LU
+	
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//----------------   Tilemap Deviation from K.O.   --------------------------
+//---------------   Desvio do Tilemap do Gráfico Ready   --------------------
+//	origin $2AC69A
+//	// [OPTS]   [Tile]    [Y]  [X]
+//	//db $21,  $F2,   $35,    $00
+//	dd $007C0000 // #00 Sprite 8x8
+//	dd $007C0000 // #01 Sprite 8x8
+//	dd $007C0000 // #02 Sprite 8x8
+//	dd $007C0000 // #03 Sprite 8x8
+//	dd $007C0000 // #04 Sprite 8x8
+//	dd $007C0000 // #05 Sprite 8x8
+//	dd $007C0000 // #06 Sprite 8x8
+//	dd $007C0000 // #07 Sprite 8x8
+//	dd $004A0020 // #08 Sprite 8x8
+//	dd $00490018 // #09 Sprite 8x8
+//	dd $003F0010 // #10 Sprite 8x8
+//	dd $003E0008 // #11 Sprite 8x8
+//	dd $003D0000 // #12 Sprite 8x8
+//	dd $003C00F8 // #13 Sprite 8x8
+//	dd $003B00F0 // #14 Sprite 8x8
+//	dd $003A00E8 // #15 Sprite 8x8
+//	dd $003900E0 // #16 Sprite 8x8
+//	dd $0048F820 // #18 Sprite 8x8
+//	dd $0038F020 // #18 Sprite 8x8 - !
+//	dd $1036F010 // #19 Sprite 16x16 - M
+//	dd $1034F000 // #20 Sprite 16x16 - E
+//	dd $1032F0F0 // #21 Sprite 16x16 - UT
+//	dd $1030F0E0 // #22 Sprite 16x16 - LU
+//	
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
@@ -381,7 +490,7 @@ ready_grafico_end:
 	
 	origin $304000
 game_over_grafico:
-	insert "gfx_ptbr\game_over.bin"
+	insert "gfx_ptbr\game_over_2.bin"
 game_over_grafico_end:
 
     origin $304800

@@ -11,7 +11,7 @@ HyperDimension:
     stx     REG_A1T0L
     lda     #$00A0        // DMA Bank*
     sta     REG_A1B0
-    ldx     #(hyperdiminension_grafico_end-hyperdiminension_grafico)        // Size*
+    ldx     #(p1_p2_grafico_end-p1_p2_grafico)        // Size*
     stx     REG_DAS0L
 
     lda     #$0001        // DMA Start

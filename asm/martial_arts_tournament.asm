@@ -7,6 +7,10 @@ torneio:
     lda $054e
     cmp #$02           
     beq carrega_grafico_torneio
+    cmp #$01           
+    beq carrega_grafico_torneio
+    cmp #$00           
+    beq carrega_grafico_torneio
     bra torneio_retorno
 
 
