@@ -40,7 +40,7 @@ options_0005:
 
 
 options_0006:
-    gameText("Lig.")
+    gameText("Lig..") 
  endstring()
  endstring()
  endstring()
