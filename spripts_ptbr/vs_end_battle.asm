@@ -121,7 +121,7 @@ script_versus_0013:
 
 
 script_versus_0014:
-    gameText("Heh heh... Você estava agindo")
+    gameText("Heh heh... Você estava agindo.")
  newline()
     gameText("como uma criança.")
  newline()
