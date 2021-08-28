@@ -1,116 +1,122 @@
 script_versus_0000: 
-    gameText("Essa luta foi muito boa!")
+    gameText("               Essa luta foi muito boa!")
  newline()
-    gameText("Você me divertiu bastante.")
+    gameText("               Você me divertiu bastante.")
   endstring()
 
 
 script_versus_0001:
-    gameText("Parece que o meu ki é um")
+    gameText("               Vegeta, o meu KI ainda")
  newline()
-    gameText("pouco maior que o seu!")
+    gameText("               é superiror ao seu!")
  endstring()
 
 
 script_versus_0002:
-    gameText("Você realmente não está")
+    gameText("                Gohan, pelo visto você ")
  newline()
-    gameText("treinando mais, não é?")
+    gameText("                não andou treinando nada, ")
+newline()
+    gameText("                nãe é mesmo? ")
  endstring()
 
 
 script_versus_0003:
-    gameText("Vocês estão muito fortes,")
+    gameText("                O treinamnto deu certo.")
  newline()
-    gameText("mas tem que corrigir essas")
+    gameText("                O nível de seus poderes")
  newline()
-    gameText("aberturas na defesa de vocês!")
+    gameText("                realmente é impressionante!")
  endstring()
 
 
 script_versus_0004:
-    gameText("Haaahahaha!")
+    gameText("             Sua luta é comigo Kakaroto,")
  newline()
-    gameText("Mas é Claro que o mais forte")
+    gameText("             a menos que você queira ")
  newline()
-    gameText("dos Saiyans só poderia ser")
- newline()
-    gameText("o seu Príncipe! Hahahaha!")
+    gameText("             mais pessoas mortas em")
+newline()
+    gameText("             sua  consciência!")
  endstring()
 
 
 script_versus_0005:
-    gameText("Saia da Frente!")
+    gameText("              Saia da Frente! Não quero")
  newline()
-    gameText("Não quero insetos!")
+    gameText("              insetos como você em meu")
  newline()
-    gameText("Esta luta é entre Kakarotto")
+    gameText("              caminho. Esta luta é entre")
  newline()
-    gameText("e eu!")
+    gameText("              entre Kakaroto e eu!")
  endstring()
 
 
 script_versus_0006:
-    gameText("Não chore!")
+    gameText("                Não chore, Trunks!")
  newline()
-    gameText("Eu te levo no parque de")
+    gameText("                Eu te levo no parque de")
  newline()
-    gameText("diversões depois...!")
+    gameText("                diversões depois...!")
  endstring()
 
 
 script_versus_0007:
-    gameText("Eu posso desviar dos seus")
+    gameText("              Você não é ninguém, é")
  newline()
-    gameText("ataques de olhos fechados")
+    gameText("              apenas uma bola de cebo.")
  newline()
-    gameText("sua bola de cebo!")
+    gameText("              Eu sou um guerreiro! O príncipe")
  newline()
-    gameText("Esse palhaço gordo me decepciona!")
+    gameText("              dos Saiyajins, Vegeta!!!")
  endstring()
 
 
 script_versus_0008:
-    gameText("Você não teve chance...")
+    gameText("                Você não teve chance...")
  endstring()
 
 
 script_versus_0009:
-    gameText("Parece que seu irmão mais velho")
+    gameText("                Parece que seu irmão")
  newline()
-    gameText("é um pouco mais forte, hein?")
+    gameText("                mais velho, ainda é")
+newline()
+    gameText("                mais forte, hein?")
  endstring()
 
 
 script_versus_0010:
-    gameText("Você está bem!?")
+    gameText("                Papai, você está bem!?")
  newline()
-    gameText("Eu exagerei um pouco...")
+    gameText("                Eu exagerei um pouco...")
  newline()
-    gameText("...me desculpe...")
+    gameText("                ...me desculpe...")
  endstring()
 
 
 script_versus_0011:
-    gameText("Tolo...")
+    gameText("                Tolo...")
  endstring()
 
 
 script_versus_0012:
-    gameText("Eu avisei que meu poder")
+    gameText("               Nos aviamos que o nosso")
  newline()
-    gameText("é infinito!")
+    gameText("               poder é infinito! Agora")
  newline()
-    gameText("Agora você sabe que eu sou o")
+    gameText("               você já sabe que somos os")
  newline()
-    gameText("mais forte do universo!")
+    gameText("               mais forte do universo!")
  endstring()
 
 
 script_versus_0013:
-    gameText("Se você continuar me irritando,")
+    gameText("               Se você continuar nos")
  newline()
-    gameText("vou fazer você se arrepender!!")
+    gameText("               irritando, vamos fazervou fazer você se arrepender!!")
+    newline()
+    gameText("               irritando, vamos fazervou fazer você se arrepender!!")
  endstring()
 
 
@@ -142,44 +148,42 @@ script_versus_0016:
 
 
 script_versus_0017:
-    gameText("Você é extremamente rápido...")
+    gameText("            Você é extremamente rápido...")
  newline()
-    gameText("No entanto, parece que você")
+    gameText("            No entanto, parece que você")
  newline()
-    gameText("não está colocando força")
+    gameText("            não está colocando força")
  newline()
-    gameText("suficiente em seus golpes.")
+    gameText("            suficiente em seus golpes.")
  endstring()
 
 
 script_versus_0018:
-    gameText("Você ficou forte, Gohan...")
+    gameText("               Você ficou muito forte, Gohan...")
  newline()
-    gameText("Estou orgulhos...")
+    gameText("               Estou orgulho de você...")
  endstring()
 
 
 script_versus_0019:
-    gameText("Desgraçado! Vou fazer você")
+    gameText("            Desgraçado! Vou fazer você")
  newline()
-    gameText("sentir o ódio de todos os")
+    gameText("            sentir o ódio de todos os")
  newline()
-    gameText("Namekuseijins que você")
+    gameText("            Namekuseijins que você")
  newline()
-    gameText("assassinou!")
+    gameText("            matou!")
  endstring()
 
 
 script_versus_0020:
-    gameText("Desgraçado. Meu sangue pode")
+    gameText("        Maldido, você pode ter o meu")
  newline()
-    gameText("estar correndo em suas veias")
+    gameText("        DNA, mas tem algo que você")
  newline()
-    gameText("também, mas aparentemente não")
+    gameText("        nunca vai conseguir, a habilidade")
  newline()
-    gameText("o suficiente. Você não tem a")
- newline()
-    gameText("mesma habilidade que eu.")
+    gameText("        de um guerreiro Namekuseijin!")
  endstring()
 
 
