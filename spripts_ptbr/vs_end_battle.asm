@@ -114,36 +114,42 @@ script_versus_0012:
 script_versus_0013:
     gameText("               Se você continuar nos")
  newline()
-    gameText("               irritando, vamos fazervou fazer você se arrepender!!")
+    gameText("               irritando, vamos fazer")
     newline()
-    gameText("               irritando, vamos fazervou fazer você se arrepender!!")
+    gameText("               você se arrepender!!!")
  endstring()
 
 
 script_versus_0014:
-    gameText("Heh heh... Você estava agindo.")
+    gameText("               Heh heh... Você estava ")
  newline()
-    gameText("como uma criança.")
+    gameText("               agindo como uma criança.")
  newline()
-    gameText("Desculpe por ter levado a luta")
- newline()
-    gameText("tão a sério.")
- endstring()
+    gameText("               Desculpe por ter levado ")
+newline()
+    gameText("               a luta tão a sério.")
+  endstring()
 
 
 script_versus_0015:
-    gameText("Era pra ter acontecido isso?")
+    gameText("                Finalmente eu terminei ")
  newline()
-    gameText("Bem... Não se sinta tão mal!")
+    gameText("                o meu aquecimento! ")
+newline()
+    gameText("                Espero que me desculpe,")
+newline()
+    gameText("                mas ainda não acostumei ")
+newline()
+    gameText("                com esse corpo!")
  endstring()
 
 
 script_versus_0016:
-    gameText("Eu gostaria que você levasse")
+    gameText("                Seu nariz está sujo de")
  newline()
-    gameText("isso mais a sério...")
+    gameText("                sangue, limpe isso ")
  newline()
-    gameText("Ou você já estava fazendo isso?")
+    gameText("                você me envergonha...")
  endstring()
 
 
@@ -159,20 +165,20 @@ script_versus_0017:
 
 
 script_versus_0018:
-    gameText("               Você ficou muito forte, Gohan...")
+    gameText("             Você ficou muito forte, Gohan!")
  newline()
-    gameText("               Estou orgulho de você...")
+    gameText("             Estou orgulho de você...")
  endstring()
 
 
 script_versus_0019:
-    gameText("            Desgraçado! Vou fazer você")
+    gameText("            Freeza, seu desgraçado!")
  newline()
-    gameText("            sentir o ódio de todos os")
+    gameText("            Você vai sentir o ódio de ")
  newline()
-    gameText("            Namekuseijins que você")
+    gameText("            todos os Namekuseijins ")
  newline()
-    gameText("            matou!")
+    gameText("            que você matou!")
  endstring()
 
 
@@ -188,163 +194,185 @@ script_versus_0020:
 
 
 script_versus_0021:
-    gameText("Parece que todo seu trabalho")
+    gameText("               Não vou te matar, vou ")
  newline()
-    gameText("duro foi em vão...")
+    gameText("               fazer melhor. Deixar você ")
+ newline()
+    gameText("               o resto da sua vida se")
+newline()
+    gameText("               rastejando agonizando!")
  endstring()
 
 
 script_versus_0022:
-    gameText("Você não sabe quando desistir!")
+    gameText("               Diga-me onde foi parar ")
+newline()
+    gameText("               toda a sua energia?")
  endstring()
 
 
 script_versus_0023:
-    gameText("Você deveria saber mais do que")
+    gameText("           Vegeta, será desagradável se")
  newline()
-    gameText("qualque outro!?")
+    gameText("           você se render só com isso.")
  newline()
-    gameText("Eu já te disse que odeio essas")
+    gameText("           Acho que precisa de mais ")
  newline()
-    gameText("suas piadas idiotas...")
+    gameText("           diversão concorda? Você vai")
+ newline()
+    gameText("           sentir a pior dor do inferno!")
  endstring()
 
 
 script_versus_0024:
-    gameText("Eu não entendo porque você")
+    gameText("            Já disse se eu usar metade do")
  newline()
-    gameText("tentou me enfrentar.")
+    gameText("            do meu poder máximo poderei ")
  newline()
-    gameText("A vitória já estava decidida.")
+    gameText("            transformá-lo em puera cósmica ")
+newline()
+    gameText("            em um piscar de olhos encetou idiota.")
  endstring()
 
 
 script_versus_0025:
-    gameText("Heheh... Qual é o problema?")
+    gameText("                Que tal.... Deve ter sentido")
  newline()
-    gameText("Eu ainda quero me divertir")
+    gameText("                o gosto da vitória por  ")
  newline()
-    gameText("mais!")
+    gameText("                alguns segundos!")
  endstring()
 
 
 script_versus_0026:
-    gameText("Qual é o problema? Para onde")
+    gameText("                Mas que falta de respeito!")
  newline()
-    gameText("foi toda sua coragem...?")
+    gameText("                Faria a gentileza de me ")
  newline()
-    gameText("Anime-se, Vegeta!")
+    gameText("                ajudar no meu aquecimento?")
  endstring()
 
 
 script_versus_0027:
-    gameText("Acho que nossa luta foi")
+    gameText("                Acho que nossa luta foi")
  newline()
-    gameText("um ótimo aquecimento...")
+    gameText("                um ótimo aquecimento...")
  endstring()
 
 
 script_versus_0028:
-    gameText("É divertido lutar com você!")
+    gameText("            É divertido lutar com você!")
  newline()
-    gameText("Vamos lutar mais!")
+    gameText("            Vamos lutar mais!")
  endstring()
 
 
 script_versus_0029:
-    gameText("Você está acabado! Tchau tchau!")
+    gameText("                  Chegou seu fim!!!")
+newline()
+    gameText("                  Chegou seu fim!!!")
+newline()
+    gameText("                  Chegou seu fim!!!")
  endstring()
 
 
 script_versus_0030:
-    gameText("Uhuu! Uhuu, Uhuu!")
+    gameText("            Vou te comer! Vou te comer!")
  newline()
-    gameText("Uhuu, Uhuu! iai iai!")
+    gameText("            Vou te comer! Vou te comer!")
  newline()
-    gameText("Vai, vai!!")
+    gameText("            Vou te comer! Vou te comer!")
  endstring()
 
 
 script_versus_0031:
-    gameText("Eu te odeio!")
+    gameText("                 Eu te odeio!")
  endstring()
 
 
 script_versus_0032:
-    gameText("Kakkakakaka...")
+    gameText("                 Kakkakakaka...")
  endstring()
 
 
 script_versus_0033:
-    gameText("Ki, ki, ki...")
+    gameText("                 Ki, ki, ki...")
  endstring()
 
 
 script_versus_0034:
-    gameText("Aeeee! Eu ganhei o Torneio")
+    gameText("               Aeeee! Eu ganhei o Torneio")
  newline()
-    gameText("de Artes Marciais! Uhuuuuu!")
+    gameText("               de Artes Marciais! Uhuuuuu!")
  endstring()
 
 
 script_versus_0035:
-    gameText("Hmph... Que torneio idiota!")
+    gameText("               Hmph... ")
+newline()
+    gameText('               Que tornei idiota!')
  endstring()
 
 
 script_versus_0036:
-    gameText("Pessoal, muito obrigado!")
+    gameText("            Pessoal, muito obrigado!")
  endstring()
 
 
 script_versus_0037:
-    gameText("Já terminou...")
+    gameText("               Já terminou...")
  newline()
-    gameText("Heh... Isso foi decepcionante.")
+    gameText("               Heh... Isso foi ")
+newline()
+    gameText("               decepcionante.")
  endstring()
 
 
 script_versus_0038:
-    gameText("Achei que haveria oponentes")
+    gameText("               Achei que haveria")
  newline()
-    gameText("mais fortes aqui...")
+    gameText("               oponentes mais fortes")
  newline()
-    gameText("Vamos, traga um oponente")
+    gameText("               aqui... Vamos, traga")
  newline()
-    gameText("digno de lutar comigo!")
+    gameText("               um oponente digno ")
+newline()
+    gameText("               para lutar comigo!!!")
  endstring()
 
 
 script_versus_0039:
-    gameText("Acho que não vou mais divertir")
+    gameText("               Acho que não vou ")
  newline()
-    gameText("com esse jogo.")
+    gameText("               mais divertir com")
+newline()
+    gameText("               com esse jogo.")
  endstring()
 
 
 script_versus_0040:
-    gameText("Foi divertido...")
+    gameText("             Foi divertido...")
  newline()
-    gameText("Já faz tempo que não faço")
+    gameText("             Já faz tempo que não faço")
  newline()
-    gameText("um treino forte...")
+    gameText("             um treino forte...")
  endstring()
 
 
 script_versus_0041:
-    gameText("Heh heh heh... Que chato...")
+    gameText("               Heh heh heh......")
  newline()
-    gameText("Que decepcionante.")
+    gameText("               Que decepcionante.")
  newline()
-    gameText("Já terminou.")
+    gameText("J              Já terminou.")
  endstring()
 
 
 script_versus_0042:
-    gameText("Uhuu!")
+    gameText("               Uhuu!")
  endstring()
 
 
 script_versus_0043:
-    gameText("Shaaah! Shaaah!")
+    gameText("               Shaaah! Shaaah!")
  endstring()
