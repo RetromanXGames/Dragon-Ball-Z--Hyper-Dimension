@@ -64,8 +64,11 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
 //----------------------------  Constants  ----------------------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    include "asm\Constantes.asm"
+    //include "asm\Constantes.asm"
 	include "asm\macro.asm"
+    include "lib/snes.asm"                                     
+    //include "lib/snes_header.asm"                           
+    include "lib/snes_gfx.asm"                                
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
 
 
@@ -77,6 +80,17 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx		
 
 
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	f
+//--------------  Splash Vila Oculta do Romhacking  -------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//	origin $007F11 // Rotina Original 
+//	jml    $AA8000 // Desvio da Rotina
+//	jml	   $00FF12 // Retorno para o Fluxo 
+//	origin $350000
+//	insert "splash\splash.asm"
+//	
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
 
 
 
@@ -125,7 +139,7 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //----------------   Script of Versus Mode Options   ------------------------
 //---------------   Script das Opções do Modo Versus   ----------------------
-	origin $030510//03007A	
+	origin $030520//03007A	
 	include "spripts_ptbr\menu_versus_mode.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -351,22 +365,36 @@ hyperdiminension_grafico_end:
 //--------------   Deviation from P1 and P2     -----------------
 //---------------   Desvio do Gráfico Hyper Dimension     -------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//    origin $010134  // Endereço de Origem do Desvio Convertido do Endereço SNES
-//  	jml    $A18000  // Desvio
-//	
-//	origin $302000  // <-- DMA SRC
-//p1_p2_grafico:
-//	insert "gfx_ptbr\p1_p2.bin"
-//p1_p2_grafico_end:
-//
-//    origin $308000
-//	include "asm\p1_p2.asm"
+    origin $011F5D  // Endereço de Origem do Desvio Convertido do Endereço SNES
+  	jml    $A1CE00  // Desvio
+	
+	origin $30CA00 // <-- DMA SRC
+p1_p2_grafico:
+	insert "gfx_ptbr\p1_p2.bin"
+p1_p2_grafico_end:
+
+    origin $30CE00
+	include "asm\p1_p2.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//------------------   Tilemap from Sprites READY   -------------------------
+//------------------   Tilemap dos Sprites PRONTOS   ------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	origin $013D11
+// [OPTS][Tile][Y][X]   [#]
+	dd $007000D0     //-#00 Sprite 8x8 - P ---(BAIXO/LOW) 
+	dd $007100D8     //-#01 Sprite 8x8 - PR --(BAIXO/LOW) 
+
 
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
-//--------------   Deviation from Ready and Fight Graph   -------------------
-//-------------------   Desvio do Gráfico Ready   ---------------------------
+//----------------------   Ready and Fight!   -------------------------------
+//-----------------------  Prontos e Lutem!   -------------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
+//-------------   Deviation from Ready and Fight! Graph   -------------------
+//--------------   Desvio dos Gráficos Prontos e Lutem!   -------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     origin $0700DE
   	jml    $A0B400
@@ -378,105 +406,169 @@ ready_grafico_end:
 
     origin $303400
 	include "asm\ready.asm"
-
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//---------------   Tilemap Deviation from Ready Graph   --------------------
-//---------------   Desvio do Tilemap do Gráfico Ready   --------------------
-	origin $2AC69A
-	// [OPTS]   [Tile]    [Y]  [X]
-	//db $21,  $F2,   $35,    $00
-	dd $007C0000 // #00 Sprite 8x8
-	dd $007C0000 // #01 Sprite 8x8
-	dd $007C0000 // #02 Sprite 8x8
-	dd $007C0000 // #03 Sprite 8x8
-	dd $007C0000 // #04 Sprite 8x8
-	dd $007C0000 // #05 Sprite 8x8
-	dd $007C0000 // #06 Sprite 8x8
-	dd $007C0000 // #07 Sprite 8x8
-	dd $004A0020 // #08 Sprite 8x8
-	dd $00490018 // #09 Sprite 8x8
-	dd $003F0010 // #10 Sprite 8x8
-	dd $003E0008 // #11 Sprite 8x8
-	dd $003D0000 // #12 Sprite 8x8
-	dd $003C00F8 // #13 Sprite 8x8
-	dd $003B00F0 // #14 Sprite 8x8
-	dd $003A00E8 // #15 Sprite 8x8
-	dd $003900E0 // #16 Sprite 8x8
-	dd $0048F820 // #18 Sprite 8x8
-	dd $0038F020 // #18 Sprite 8x8 - !
-	dd $1036F010 // #19 Sprite 16x16 - M
-	dd $1034F000 // #20 Sprite 16x16 - E
-	dd $1032F0F0 // #21 Sprite 16x16 - UT
-	dd $1030F0E0 // #22 Sprite 16x16 - LU
-	
+//-----------------------   READY Pointer   ---------------------------------
+//--------------------   Ponteiro do PRONTOS   ------------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	origin $04BBA9
+	dl $AF8000   
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//------------------   Tilemap from Sprites READY   -------------------------
+//------------------   Tilemap dos Sprites PRONTOS   ------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	origin $378000
+// [OPTS][Tile][Y][X]   [#]
+	dd $007000D0     //-#00 Sprite 8x8 - P ---(BAIXO/LOW) 
+	dd $007100D8     //-#01 Sprite 8x8 - PR --(BAIXO/LOW) 
+	dd $007200E0     //-#02 Sprite 8x8 - R ---(BAIXO/LOW) 
+	dd $007300E8     //-#03 Sprite 8x8 - O ---(BAIXO/LOW) 
+	dd $007400F0     //-#04 Sprite 8x8 - O ---(BAIXO/LOW) 
+	dd $007500F8     //-#05 Sprite 8x8 - N ---(BAIXO/LOW) 
+	dd $00760000     //-#06 Sprite 8x8 - NT --(BAIXO/LOW) 
+	dd $00770008     //-#07 Sprite 8x8 - T ---(BAIXO/LOW) 
+	dd $00780010     //-#08 Sprite 8x8 - O ---(BAIXO/LOW) 
+	dd $00790018     //-#09 Sprite 8x8 - O ---(BAIXO/LOW) 
+	dd $007A0020     //-#10 Sprite 8x8 - S ---(BAIXO/LOW) 
+	dd $007B0028     //-#11 Sprite 8x8 - S ---(BAIXO/LOW)
+	dd $1050F0D0     //-#17 Sprite 16X16 - P ---(ALTO/HIGH)
+	dd $1052F0E0     //-#16 Sprite 16X16 - RO --(ALTO/HIGH)
+	dd $1054F0F0     //-#15 Sprite 16X16 - ON --(ALTO/HIGH)
+	dd $1056F000     //-#14 Sprite 16X16 - T ---(ALTO/HIGH)
+	dd $1058F010     //-#13 Sprite 16X16 - O ---(ALTO/HIGH)
+	dd $105AF020     //-#12 Sprite 16X16 - S ---(ALTO/HIGH)
+	dd $49001880     //-END
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//-----------------------  FIGHT! Pointer   ---------------------------------
+//--------------------   Ponteiro do FIGHT!  --------------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	origin $04BBAC
+	dl $AF8080   
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//------------------   Tilemap from Sprites FIGHT   -------------------------
+//------------------   Tilemap dos Sprites LUTEM!   -------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	origin $378080
+// [OPTS][Tile][Y][X]   [#]
+	dd $003900E0     //-#00 Sprite 8x8 - L ---(BAIXO/LOW)
+	dd $003A00E8     //-#01 Sprite 8x8 - LU --(BAIXO/LOW)
+	dd $003B00F0     //-#02 Sprite 8x8 - U ---(BAIXO/LOW)
+	dd $003C00F8     //-#03 Sprite 8x8 - T ---(BAIXO/LOW)
+	dd $003D0000     //-#04 Sprite 8x8 - TE --(BAIXO/LOW)
+	dd $003E0008     //-#05 Sprite 8x8 - EM --(BAIXO/LOW)
+	dd $003F0010     //-#06 Sprite 8x8 - M ---(BAIXO/LOW)
+	dd $00490018     //-#07 Sprite 8x8 - M ---(BAIXO/LOW)
+	dd $004A0020     //-#08 Sprite 8x8 - ! ---(BAIXO/LOW)
+	dd $0048F820     //-#09 Sprite 8x8 - ! ---(BAIXO/LOW)
+	dd $0038F020     //-#10 Sprite 8x8 - ! ---(BAIXO/LOW)
+	dd $1030F0E0     //-#11 Sprite 16X16 - LU --(ALTO/HIGH)
+	dd $1032F0F0     //-#12 Sprite 16X16 - UT --(ALTO/HIGH)
+	dd $1034F000     //-#13 Sprite 16X16 - E ---(ALTO/HIGH)
+	dd $1036F010     //-#14 Sprite 16X16 - M ---(ALTO/HIGH)
+	dd $73081480     //-END
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
+//----------------------------   K.O.   -------------------------------------
+//--------------------------   Nocaute   ------------------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//------------------------   K.O. Pointer   ---------------------------------
+//------------------   Configuração do Nocaute   ----------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	origin $04BBB2
+	dl $AF8200
+	origin $04BBB5
+	dl $AF8200
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//-----------------   Tilemap from Sprites K.O.   ---------------------------
+//-----------------   Tilemap dos Sprites NOCAUTE   -------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	origin $378200
+// [OPTS][Tile][Y][X]   [#]
+	dd $1030F8D4 // #00 Sprite 16x16 - N
+	dd $1032F8E4 // #01 Sprite 16x16 - O
+	dd $1034F8F4 // #02 Sprite 16x16 - CA 
+	dd $1036F804 // #03 Sprite 16x16 - UT
+	dd $1038F814 // #04 Sprite 16x16 - TE
+	dd $003AF824 // #04 Sprite 16x16 - !
+	dd $004A0024 // #04 Sprite 16x16 - !
+	dd $005A0824 // #04 Sprite 16x16 - !
+	dd $005008D4 // #05 Sprite 8x8 
+    dd $005108DC // #07 Sprite 8x8
+	dd $005208E4 // #09 Sprite 8x8 
+	dd $005308EC // #11 Sprite 8x8
+	dd $005408F4 // #13 Sprite 8x8
+	dd $005508FC // #14 Sprite 16x16
+	dd $00560804 // #05 Sprite 8x8 
+    dd $0057080C // #07 Sprite 8x8
+	dd $00580814 // #09 Sprite 8x8 
+	dd $0059081C // #11 Sprite 8x8
+	dd $7CF40C80 // #14 Sprite 16x16    
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
+//-------------------   Double K.O. Graph   ---------------------------------
+//--------------------   Nocaute Duplo   ------------------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
+//------------   Deviation from Double K.O. Graph   -------------------------
+//-----------   Desvio do Gráfico do Nocaute Duplo   ------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//    origin $0013B2
+//  	jml    $A0DC00
+//	
+//	origin $304E00
+//double_ko_grafico:
+//	insert "gfx_ptbr\double_ko.bin"
+//double_ko_grafico_end:
+//
+//    origin $305C00
+//	include "asm\double_ko.asm"
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//----------------------  Double K.O. Pointer   -----------------------------
+//------------------   Ponteiro do Nocaute Duplo  ---------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	origin $04BBAF
+	dl $AF8300
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //----------------   Tilemap from Sprites Double K.O.   ---------------------
-//---------------   Desvio do Tilemap do Gráfico Ready   --------------------
-//	origin $2AC69A
-//	// [OPTS]   [Tile]    [Y]  [X]
-//	//db $21,  $F2,   $35,    $00
-//	dd $007C0000 // #00 Sprite 8x8
-//	dd $007C0000 // #01 Sprite 8x8
-//	dd $007C0000 // #02 Sprite 8x8
-//	dd $007C0000 // #03 Sprite 8x8
-//	dd $007C0000 // #04 Sprite 8x8
-//	dd $007C0000 // #05 Sprite 8x8
-//	dd $007C0000 // #06 Sprite 8x8
-//	dd $007C0000 // #07 Sprite 8x8
-//	dd $004A0020 // #08 Sprite 8x8
-//	dd $00490018 // #09 Sprite 8x8
-//	dd $003F0010 // #10 Sprite 8x8
-//	dd $003E0008 // #11 Sprite 8x8
-//	dd $003D0000 // #12 Sprite 8x8
-//	dd $003C00F8 // #13 Sprite 8x8
-//	dd $003B00F0 // #14 Sprite 8x8
-//	dd $003A00E8 // #15 Sprite 8x8
-//	dd $003900E0 // #16 Sprite 8x8
-//	dd $0048F820 // #18 Sprite 8x8
-//	dd $0038F020 // #18 Sprite 8x8 - !
-//	dd $1036F010 // #19 Sprite 16x16 - M
-//	dd $1034F000 // #20 Sprite 16x16 - E
-//	dd $1032F0F0 // #21 Sprite 16x16 - UT
-//	dd $1030F0E0 // #22 Sprite 16x16 - LU
-	
+//----------------   Tilemap dos Sprites NOCAUTE DUPLO   --------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
-
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//----------------   Tilemap Deviation from K.O.   --------------------------
-//---------------   Desvio do Tilemap do Gráfico Ready   --------------------
-//	origin $2AC69A
-//	// [OPTS]   [Tile]    [Y]  [X]
-//	//db $21,  $F2,   $35,    $00
-//	dd $007C0000 // #00 Sprite 8x8
-//	dd $007C0000 // #01 Sprite 8x8
-//	dd $007C0000 // #02 Sprite 8x8
-//	dd $007C0000 // #03 Sprite 8x8
-//	dd $007C0000 // #04 Sprite 8x8
-//	dd $007C0000 // #05 Sprite 8x8
-//	dd $007C0000 // #06 Sprite 8x8
-//	dd $007C0000 // #07 Sprite 8x8
-//	dd $004A0020 // #08 Sprite 8x8
-//	dd $00490018 // #09 Sprite 8x8
-//	dd $003F0010 // #10 Sprite 8x8
-//	dd $003E0008 // #11 Sprite 8x8
-//	dd $003D0000 // #12 Sprite 8x8
-//	dd $003C00F8 // #13 Sprite 8x8
-//	dd $003B00F0 // #14 Sprite 8x8
-//	dd $003A00E8 // #15 Sprite 8x8
-//	dd $003900E0 // #16 Sprite 8x8
-//	dd $0048F820 // #18 Sprite 8x8
-//	dd $0038F020 // #18 Sprite 8x8 - !
-//	dd $1036F010 // #19 Sprite 16x16 - M
-//	dd $1034F000 // #20 Sprite 16x16 - E
-//	dd $1032F0F0 // #21 Sprite 16x16 - UT
-//	dd $1030F0E0 // #22 Sprite 16x16 - LU
-//	
+	origin $378300
+// [OPTS][Tile][Y][X]   [#]
+	dd $005FF830 // #00 Sprite 8x8
+	dd $005EF828 // #01 Sprite 8x8
+	dd $005DF820 // #02 Sprite 8x8
+	dd $005CF818 // #03 Sprite 8x8
+	dd $005BF810 // #03 Sprite 8x8
+	dd $004FF808 // #04 Sprite 8x8
+	dd $004EF800 // #05 Sprite 8x8
+	dd $004DF8F8 // #06 Sprite 8x8
+	dd $004CF8F0 // #07 Sprite 8x8
+	dd $004BF8E8 // #08 Sprite 8x8
+	dd $003FF8E0 // #09 Sprite 8x8
+	dd $003EF8D8 // #10 Sprite 8x8
+	dd $003DF8D0 // #11 Sprite 8x8
+	dd $003CF8C8 // #12 Sprite 8x8
+	dd $003BF8C0 // #13 Sprite 8x8
+	dd $006F0830 // #14 Sprite 8x8
+	dd $006E0030 // #15 Sprite 8x8
+	dd $106C0020 // #16 Sprite 8x8
+	dd $106A0010 // #18 Sprite 8x8
+	dd $10680000 // #18 Sprite 8x8 - !
+	dd $106600F0 // #19 Sprite 16x16 - M
+	dd $106400E0 // #20 Sprite 16x16 - E
+	dd $106200D0 // #21 Sprite 16x16 - UT
+	dd $106000C0 // #22 Sprite 16x16 - LU
+	dd $30F8D480 // #22 Sprite 16x16 - LU
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
