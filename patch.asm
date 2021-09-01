@@ -418,7 +418,7 @@ ready_grafico_end:
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	origin $378000
 // [OPTS][Tile][Y][X]   [#]
-	dd $007000D0     //-#00 Sprite 8x8 - P ---(BAIXO/LOW) abcd
+	dd $007000D0     //-#00 Sprite 8x8 - P ---(BAIXO/LOW)
 	dd $007100D8     //-#01 Sprite 8x8 - PR --(BAIXO/LOW) 
 	dd $007200E0     //-#02 Sprite 8x8 - R ---(BAIXO/LOW) 
 	dd $007300E8     //-#03 Sprite 8x8 - O ---(BAIXO/LOW) 
