@@ -1,5 +1,3 @@
-ready:
-    
     // INTRUCOES ORIGINAIS DE ONDE EU COLOQUEI O DESVIO
     jsl     $00a21c
 

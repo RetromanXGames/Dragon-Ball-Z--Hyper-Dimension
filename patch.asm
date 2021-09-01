@@ -64,7 +64,7 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
 //----------------------------  Constants  ----------------------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    //include "asm\Constantes.asm"
+    include "asm\Constantes.asm"
 	include "asm\macro.asm"
     include "lib/snes.asm"                                     
     //include "lib/snes_header.asm"                           
@@ -81,15 +81,15 @@
 
 
 
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	f
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
 //--------------  Splash Vila Oculta do Romhacking  -------------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//	origin $007F11 // Rotina Original 
-//	jml    $AA8000 // Desvio da Rotina
-//	jml	   $00FF12 // Retorno para o Fluxo 
-//	origin $350000
-//	insert "splash\splash.asm"
-//	
+	//origin $007F11 // Rotina Original 
+	//jml    $AA8000 // Desvio da Rotina
+	//jml	   $00FF12 // Retorno para o Fluxo
+	//origin $350000
+	//insert "splash\splash.asm"
+	
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
 
 
@@ -365,16 +365,16 @@ hyperdiminension_grafico_end:
 //--------------   Deviation from P1 and P2     -----------------
 //---------------   Desvio do Gráfico Hyper Dimension     -------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    origin $011F5D  // Endereço de Origem do Desvio Convertido do Endereço SNES
-  	jml    $A1CE00  // Desvio
-	
-	origin $30CA00 // <-- DMA SRC
-p1_p2_grafico:
-	insert "gfx_ptbr\p1_p2.bin"
-p1_p2_grafico_end:
-
-    origin $30CE00
-	include "asm\p1_p2.asm"
+//    origin $011F5D  // Endereço de Origem do Desvio Convertido do Endereço SNES
+//  	jml    $A1CE00  // Desvio
+//	
+//	origin $30CA00 // <-- DMA SRC
+//p1_p2_grafico:
+//	insert "gfx_ptbr\p1_p2.bin"
+//p1_p2_grafico_end:
+//
+//    origin $30CE00
+//	include "asm\p1_p2.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //------------------   Tilemap from Sprites READY   -------------------------
@@ -418,7 +418,7 @@ ready_grafico_end:
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	origin $378000
 // [OPTS][Tile][Y][X]   [#]
-	dd $007000D0     //-#00 Sprite 8x8 - P ---(BAIXO/LOW) 
+	dd $007000D0     //-#00 Sprite 8x8 - P ---(BAIXO/LOW) abcd
 	dd $007100D8     //-#01 Sprite 8x8 - PR --(BAIXO/LOW) 
 	dd $007200E0     //-#02 Sprite 8x8 - R ---(BAIXO/LOW) 
 	dd $007300E8     //-#03 Sprite 8x8 - O ---(BAIXO/LOW) 
