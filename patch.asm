@@ -105,6 +105,9 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     origin $00066AB7 // Endereço da Instrução que muda o Banco convertido de PC para SNES
     lda #$00AE
+	origin $000CE388 // Endereço da Instrução que muda o Banco convertido de PC para SNES
+    lda #$00A0
+	
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //----------------   Pointers of Pointers Table   ---------------------------
 //--------------   Ponteiro da Tabela de Ponteiros    -----------------------
@@ -124,10 +127,10 @@
 //---------------------   Script History Mode   -----------------------------
 //-------------------   Script do modo História   ---------------------------
 	origin $371000
-    include "spripts_ptbr\history.asm"
+    include "scripts_ptbr\history.asm"
 //---------------  Script End of Battle in Versus Mode  ---------------------
 //-------------  Script do Fim da Batalho no Modo Versus   ------------------
-    include "spripts_ptbr\vs_end_battle.asm"
+    include "scripts_ptbr\vs_end_battle.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -140,7 +143,7 @@
 //----------------   Script of Versus Mode Options   ------------------------
 //---------------   Script das Opções do Modo Versus   ----------------------
 	origin $030520//03007A	
-	include "spripts_ptbr\menu_versus_mode.asm"
+	include "scripts_ptbr\menu_versus_mode.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -153,7 +156,7 @@
 //--------------   Script of Versus Mode Configuration   --------------------
 //-------------   Script da Configuração do Modo Versus   -------------------
 	origin $030570//0300AA	
-	include "spripts_ptbr\vs_mode_configuration.asm"	
+	include "scripts_ptbr\vs_mode_configuration.asm"	
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -166,7 +169,7 @@
 //-----------------   Script Menu Title Screen   ----------------------------
 //---------------   Script do Menu da Tela Título   -------------------------
 	origin $030480//030000	
-	include "spripts_ptbr\menu_title_screen.asm"
+	include "scripts_ptbr\menu_title_screen.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -179,7 +182,7 @@
 //--------------------   Script Options Mode   ------------------------------
 //-------------------   Script do Modo Opções   -----------------------------
 	origin $010B1E	
-	include "spripts_ptbr\option.asm"
+	include "scripts_ptbr\option.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //------------------   Soundtrack Pointers Table   --------------------------
@@ -191,8 +194,8 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //---------------------   Script Soundtrack   -------------------------------
 //------------------   Script da Trilha Sonora   ----------------------------
-	origin $010BC0	
-	include "spripts_ptbr\soundtrack_menu.asm"	
+	origin $301000	
+	include "scripts_ptbr\soundtrack_menu.asm"	
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -205,7 +208,7 @@
 //-------------------   Script of Tournament Mode   -------------------------
 //-----------------   Script do Menu do Modo Torneio   ----------------------
 	origin $030660	
-	include "spripts_ptbr\menu_tournament.asm"		
+	include "scripts_ptbr\menu_tournament.asm"		
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -218,7 +221,7 @@
 //---------------   Script of Tournament bracket   --------------------------
 //---------------   Script das Chaves do Torneio   --------------------------
 	origin $0306C0	
-	include "spripts_ptbr\tournament_bracket.asm"		
+	include "scripts_ptbr\tournament_bracket.asm"		
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -231,7 +234,7 @@
 //---------------------   Script of Continues   -----------------------------
 //---------------------   Script dos Continues   ----------------------------
 	origin $030780	
-	include "spripts_ptbr\continues.asm"		
+	include "scripts_ptbr\continues.asm"		
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -244,7 +247,7 @@
 //----------------------   Script of Credits   ------------------------------
 //---------------------   Script dos Créditos   -----------------------------
 	origin $033E0E	
-	include "spripts_ptbr\credits.asm"		
+	include "scripts_ptbr\credits.asm"		
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -328,7 +331,8 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
-//xxxxxxxxxxxxxxxxxx   READY/FIGHT!/K.O./DOUBLE K.O.   xxxxxxxxxxxxxxxxxxxxxx
+//xxxxxxxxxxxxxxxxxxxxxxxx   READY/FIGHT!   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//-----------------------   PRONTOS/LUTEM!   --------------------------------
 	origin $2ABCA9
 	insert "gfx_ptbr\ready.bin"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -339,8 +343,8 @@
 
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
-//---------------------------   Detour     ----------------------------------
-//---------------------------   Desvios     ---------------------------------
+//---------------------------   Detour   ------------------------------------
+//---------------------------   Desvios   -----------------------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -376,15 +380,7 @@ hyperdiminension_grafico_end:
 //    origin $30CE00
 //	include "asm\p1_p2.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//------------------   Tilemap from Sprites READY   -------------------------
-//------------------   Tilemap dos Sprites PRONTOS   ------------------------
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//	origin $013D11
-//// [OPTS][Tile][Y][X]   [#]
-//	dd $007000D0     //-#00 Sprite 8x8 - P ---(BAIXO/LOW) 
-//	dd $007100D8     //-#01 Sprite 8x8 - PR --(BAIXO/LOW) 
-//
+
 
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
@@ -434,7 +430,7 @@ ready_grafico_end:
 	dd $1068F010     //-#13 Sprite 16X16 - O ---(ALTO/HIGH)
 	dd $106AF020     //-#12 Sprite 16X16 - S ---(ALTO/HIGH)
 //-----------------------END-----------------------------
-	dd $49001880     //-END
+	dd $49001880
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //-----------------------  FIGHT! Pointer   ---------------------------------
 //--------------------   Ponteiro do FIGHT!  --------------------------------
@@ -463,7 +459,7 @@ ready_grafico_end:
 	dd $1034F000     //-#13 Sprite 16X16 - E ---(ALTO/HIGH)
 	dd $1036F010     //-#14 Sprite 16X16 - M ---(ALTO/HIGH)
 //-----------------------END-----------------------------
-	dd $73081480     //-END
+	dd $73081480
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -507,7 +503,7 @@ ready_grafico_end:
 	dd $00580814 // #16 Sprite  8x8  - T ---(BAIXO/LOW) 
 	dd $0059081C // #17 Sprite  8x8  - TE --(BAIXO/LOW)
 //-----------------------END-----------------------------
-	dd $7CF40C80 // #14 Sprite 16x16    
+	dd $7CF40C80 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -569,7 +565,7 @@ ready_grafico_end:
 	dd $007B2028 // #33 Sprite  8x8  - O -----(BAIXO/LOW)
 	dd $007C2828 // #34 Sprite  8x8  - BLANK -(BAIXO/LOW)
 //-----------------------END-----------------------------
-	dd $30F8D480 // #22 Sprite 16x16 - LU
+	dd $30F8D480
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
