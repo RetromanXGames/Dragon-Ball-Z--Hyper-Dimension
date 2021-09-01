@@ -380,11 +380,11 @@ hyperdiminension_grafico_end:
 //------------------   Tilemap from Sprites READY   -------------------------
 //------------------   Tilemap dos Sprites PRONTOS   ------------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-	origin $013D11
-// [OPTS][Tile][Y][X]   [#]
-	dd $007000D0     //-#00 Sprite 8x8 - P ---(BAIXO/LOW) 
-	dd $007100D8     //-#01 Sprite 8x8 - PR --(BAIXO/LOW) 
-
+//	origin $013D11
+//// [OPTS][Tile][Y][X]   [#]
+//	dd $007000D0     //-#00 Sprite 8x8 - P ---(BAIXO/LOW) 
+//	dd $007100D8     //-#01 Sprite 8x8 - PR --(BAIXO/LOW) 
+//
 
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
@@ -418,24 +418,24 @@ ready_grafico_end:
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	origin $378000
 // [OPTS][Tile][Y][X]   [#]
-	dd $007000D0     //-#00 Sprite 8x8 - P ---(BAIXO/LOW)
-	dd $007100D8     //-#01 Sprite 8x8 - PR --(BAIXO/LOW) 
-	dd $007200E0     //-#02 Sprite 8x8 - R ---(BAIXO/LOW) 
-	dd $007300E8     //-#03 Sprite 8x8 - O ---(BAIXO/LOW) 
-	dd $007400F0     //-#04 Sprite 8x8 - O ---(BAIXO/LOW) 
-	dd $007500F8     //-#05 Sprite 8x8 - N ---(BAIXO/LOW) 
-	dd $00760000     //-#06 Sprite 8x8 - NT --(BAIXO/LOW) 
-	dd $00770008     //-#07 Sprite 8x8 - T ---(BAIXO/LOW) 
-	dd $00780010     //-#08 Sprite 8x8 - O ---(BAIXO/LOW) 
-	dd $00790018     //-#09 Sprite 8x8 - O ---(BAIXO/LOW) 
-	dd $007A0020     //-#10 Sprite 8x8 - S ---(BAIXO/LOW) 
-	dd $007B0028     //-#11 Sprite 8x8 - S ---(BAIXO/LOW)
-	dd $1050F0D0     //-#17 Sprite 16X16 - P ---(ALTO/HIGH)
-	dd $1052F0E0     //-#16 Sprite 16X16 - RO --(ALTO/HIGH)
-	dd $1054F0F0     //-#15 Sprite 16X16 - ON --(ALTO/HIGH)
-	dd $1056F000     //-#14 Sprite 16X16 - T ---(ALTO/HIGH)
-	dd $1058F010     //-#13 Sprite 16X16 - O ---(ALTO/HIGH)
-	dd $105AF020     //-#12 Sprite 16X16 - S ---(ALTO/HIGH)
+	dd $003900D4     //-#00 Sprite  8x8  - P ---(BAIXO/LOW)
+	dd $003A00DC     //-#01 Sprite  8x8  - PR --(BAIXO/LOW) 
+	dd $003B00E4     //-#02 Sprite  8x8  - R ---(BAIXO/LOW) 
+	dd $003C00EC     //-#03 Sprite  8x8  - O ---(BAIXO/LOW) 
+	dd $003D00F4     //-#04 Sprite  8x8  - O ---(BAIXO/LOW) 
+	dd $003E00FC     //-#05 Sprite  8x8  - N ---(BAIXO/LOW) 
+	dd $003F0004     //-#06 Sprite  8x8  - NT --(BAIXO/LOW) 
+	dd $0049000C     //-#07 Sprite  8x8  - T ---(BAIXO/LOW) 
+	dd $004A0014     //-#08 Sprite  8x8  - O ---(BAIXO/LOW) 
+	dd $004B001C     //-#09 Sprite  8x8  - O ---(BAIXO/LOW) 
+	dd $004C0024     //-#10 Sprite  8x8  - S ---(BAIXO/LOW) 
+	dd $1060F0D4     //-#17 Sprite 16X16 - P ---(ALTO/HIGH)
+	dd $1062F0E4     //-#16 Sprite 16X16 - RO --(ALTO/HIGH)
+	dd $1064F0F4     //-#15 Sprite 16X16 - ON --(ALTO/HIGH)
+	dd $1066F004     //-#14 Sprite 16X16 - T ---(ALTO/HIGH)
+	dd $1068F014     //-#13 Sprite 16X16 - O ---(ALTO/HIGH)
+	dd $106AF024     //-#12 Sprite 16X16 - S ---(ALTO/HIGH)
+//-----------------------END-----------------------------
 	dd $49001880     //-END
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //-----------------------  FIGHT! Pointer   ---------------------------------
@@ -449,21 +449,22 @@ ready_grafico_end:
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	origin $378080
 // [OPTS][Tile][Y][X]   [#]
-	dd $003900E0     //-#00 Sprite 8x8 - L ---(BAIXO/LOW)
-	dd $003A00E8     //-#01 Sprite 8x8 - LU --(BAIXO/LOW)
-	dd $003B00F0     //-#02 Sprite 8x8 - U ---(BAIXO/LOW)
-	dd $003C00F8     //-#03 Sprite 8x8 - T ---(BAIXO/LOW)
-	dd $003D0000     //-#04 Sprite 8x8 - TE --(BAIXO/LOW)
-	dd $003E0008     //-#05 Sprite 8x8 - EM --(BAIXO/LOW)
-	dd $003F0010     //-#06 Sprite 8x8 - M ---(BAIXO/LOW)
-	dd $00490018     //-#07 Sprite 8x8 - M ---(BAIXO/LOW)
-	dd $004A0020     //-#08 Sprite 8x8 - ! ---(BAIXO/LOW)
-	dd $0048F820     //-#09 Sprite 8x8 - ! ---(BAIXO/LOW)
-	dd $0038F020     //-#10 Sprite 8x8 - ! ---(BAIXO/LOW)
+	dd $005000E0     //-#00 Sprite  8x8  - L ---(BAIXO/LOW)
+	dd $005100E8     //-#01 Sprite  8x8  - LU --(BAIXO/LOW)
+	dd $005200F0     //-#02 Sprite  8x8  - U ---(BAIXO/LOW)
+	dd $005300F8     //-#03 Sprite  8x8  - T ---(BAIXO/LOW)
+	dd $00540000     //-#04 Sprite  8x8  - TE --(BAIXO/LOW)
+	dd $00550008     //-#05 Sprite  8x8  - EM --(BAIXO/LOW)
+	dd $00560010     //-#06 Sprite  8x8  - M ---(BAIXO/LOW)
+	dd $00570018     //-#07 Sprite  8x8  - M ---(BAIXO/LOW)
+	dd $00580020     //-#08 Sprite  8x8  - ! ---(BAIXO/LOW)
+	dd $0048F820     //-#09 Sprite  8x8  - ! ---(BAIXO/LOW)
+	dd $0038F020     //-#10 Sprite  8x8  - ! ---(BAIXO/LOW)
 	dd $1030F0E0     //-#11 Sprite 16X16 - LU --(ALTO/HIGH)
 	dd $1032F0F0     //-#12 Sprite 16X16 - UT --(ALTO/HIGH)
 	dd $1034F000     //-#13 Sprite 16X16 - E ---(ALTO/HIGH)
 	dd $1036F010     //-#14 Sprite 16X16 - M ---(ALTO/HIGH)
+//-----------------------END-----------------------------
 	dd $73081480     //-END
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -489,24 +490,25 @@ ready_grafico_end:
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	origin $378200
 // [OPTS][Tile][Y][X]   [#]
-	dd $1030F8D4 // #00 Sprite 16x16 - N
-	dd $1032F8E4 // #01 Sprite 16x16 - O
-	dd $1034F8F4 // #02 Sprite 16x16 - CA 
-	dd $1036F804 // #03 Sprite 16x16 - UT
-	dd $1038F814 // #04 Sprite 16x16 - TE
-	dd $003AF824 // #04 Sprite 16x16 - !
-	dd $004A0024 // #04 Sprite 16x16 - !
-	dd $005A0824 // #04 Sprite 16x16 - !
-	dd $005008D4 // #05 Sprite 8x8 
-    dd $005108DC // #07 Sprite 8x8
-	dd $005208E4 // #09 Sprite 8x8 
-	dd $005308EC // #11 Sprite 8x8
-	dd $005408F4 // #13 Sprite 8x8
-	dd $005508FC // #14 Sprite 16x16
-	dd $00560804 // #05 Sprite 8x8 
-    dd $0057080C // #07 Sprite 8x8
-	dd $00580814 // #09 Sprite 8x8 
-	dd $0059081C // #11 Sprite 8x8
+	dd $1030F8D4 // #00 Sprite 16x16 - N ---(ALTO/HIGH)
+	dd $1032F8E4 // #01 Sprite 16x16 - O ---(ALTO/HIGH)
+	dd $1034F8F4 // #02 Sprite 16x16 - A ---(ALTO/HIGH)
+	dd $1036F804 // #03 Sprite 16x16 - U ---(ALTO/HIGH)
+	dd $1038F814 // #04 Sprite 16x16 - T ---(ALTO/HIGH)
+	dd $003AF824 // #05 Sprite  8x8  - E ---(ALTO/HIGH)
+	dd $004A0024 // #06 Sprite  8x8  - E ---(ALTO/HIGH)
+	dd $005A0824 // #07 Sprite  8x8  - E ---(ALTO/HIGH)
+	dd $005008D4 // #08 Sprite  8x8  - N ---(BAIXO/LOW) 
+    dd $005108DC // #09 Sprite  8x8  - N ---(BAIXO/LOW)
+	dd $005208E4 // #10 Sprite  8x8  - O ---(BAIXO/LOW) 
+	dd $005308EC // #11 Sprite  8x8  - OC --(BAIXO/LOW)
+	dd $005408F4 // #12 Sprite  8x8  - C ---(BAIXO/LOW)
+	dd $005508FC // #13 Sprite  8x8  - A ---(BAIXO/LOW)
+	dd $00560804 // #14 Sprite  8x8  - AU --(BAIXO/LOW) 
+    dd $0057080C // #15 Sprite  8x8  - U ---(BAIXO/LOW)
+	dd $00580814 // #16 Sprite  8x8  - T ---(BAIXO/LOW) 
+	dd $0059081C // #17 Sprite  8x8  - TE --(BAIXO/LOW)
+//-----------------------END-----------------------------
 	dd $7CF40C80 // #14 Sprite 16x16    
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -518,21 +520,6 @@ ready_grafico_end:
 //--------------------   Nocaute Duplo   ------------------------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
-//------------   Deviation from Double K.O. Graph   -------------------------
-//-----------   Desvio do Gráfico do Nocaute Duplo   ------------------------
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//    origin $0013B2
-//  	jml    $A0DC00
-//	
-//	origin $304E00
-//double_ko_grafico:
-//	insert "gfx_ptbr\double_ko.bin"
-//double_ko_grafico_end:
-//
-//    origin $305C00
-//	include "asm\double_ko.asm"
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //----------------------  Double K.O. Pointer   -----------------------------
 //------------------   Ponteiro do Nocaute Duplo  ---------------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -543,31 +530,47 @@ ready_grafico_end:
 //----------------   Tilemap dos Sprites NOCAUTE DUPLO   --------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	origin $378300
+//-----------------------K.O.----------------------------
+//---------------------NOCAUTE---------------------------
 // [OPTS][Tile][Y][X]   [#]
-	dd $005FF830 // #00 Sprite 8x8
-	dd $005EF828 // #01 Sprite 8x8
-	dd $005DF820 // #02 Sprite 8x8
-	dd $005CF818 // #03 Sprite 8x8
-	dd $005BF810 // #03 Sprite 8x8
-	dd $004FF808 // #04 Sprite 8x8
-	dd $004EF800 // #05 Sprite 8x8
-	dd $004DF8F8 // #06 Sprite 8x8
-	dd $004CF8F0 // #07 Sprite 8x8
-	dd $004BF8E8 // #08 Sprite 8x8
-	dd $003FF8E0 // #09 Sprite 8x8
-	dd $003EF8D8 // #10 Sprite 8x8
-	dd $003DF8D0 // #11 Sprite 8x8
-	dd $003CF8C8 // #12 Sprite 8x8
-	dd $003BF8C0 // #13 Sprite 8x8
-	dd $006F0830 // #14 Sprite 8x8
-	dd $006E0030 // #15 Sprite 8x8
-	dd $106C0020 // #16 Sprite 8x8
-	dd $106A0010 // #18 Sprite 8x8
-	dd $10680000 // #18 Sprite 8x8 - !
-	dd $106600F0 // #19 Sprite 16x16 - M
-	dd $106400E0 // #20 Sprite 16x16 - E
-	dd $106200D0 // #21 Sprite 16x16 - UT
-	dd $106000C0 // #22 Sprite 16x16 - LU
+	dd $1030F8D4 // #00 Sprite 16x16 - N ---(ALTO/HIGH)
+	dd $1032F8E4 // #01 Sprite 16x16 - O ---(ALTO/HIGH)
+	dd $1034F8F4 // #02 Sprite 16x16 - A ---(ALTO/HIGH)
+	dd $1036F804 // #03 Sprite 16x16 - U ---(ALTO/HIGH)
+	dd $1038F814 // #04 Sprite 16x16 - T ---(ALTO/HIGH)
+	dd $003AF824 // #05 Sprite  8x8  - E ---(ALTO/HIGH)
+	dd $004A0024 // #06 Sprite  8x8  - E ---(ALTO/HIGH)
+	dd $005A0824 // #07 Sprite  8x8  - E ---(ALTO/HIGH)
+	dd $005008D4 // #08 Sprite  8x8  - N ---(BAIXO/LOW) 
+    dd $005108DC // #09 Sprite  8x8  - N ---(BAIXO/LOW)
+	dd $005208E4 // #10 Sprite  8x8  - O ---(BAIXO/LOW) 
+	dd $005308EC // #11 Sprite  8x8  - OC --(BAIXO/LOW)
+	dd $005408F4 // #12 Sprite  8x8  - C ---(BAIXO/LOW)
+	dd $005508FC // #13 Sprite  8x8  - A ---(BAIXO/LOW)
+	dd $00560804 // #14 Sprite  8x8  - AU --(BAIXO/LOW) 
+    dd $0057080C // #15 Sprite  8x8  - U ---(BAIXO/LOW)
+	dd $00580814 // #16 Sprite  8x8  - T ---(BAIXO/LOW) 
+	dd $0059081C // #17 Sprite  8x8  - TE --(BAIXO/LOW)
+//----------------------DOUBLE---------------------------
+//----------------------DUPLO----------------------------
+	dd $106010D8 // #18 Sprite 16x16 - D -----(ALTO/HIGH)
+	dd $106210E8 // #19 Sprite 16x16 - U -----(ALTO/HIGH)
+	dd $106410F8 // #20 Sprite 16x16 - PL ----(ALTO/HIGH)
+	dd $10661008 // #21 Sprite 16x16 - LO ----(ALTO/HIGH)
+	dd $10681018 // #22 Sprite 16x16 - O -----(ALTO/HIGH)
+	dd $006A1028 // #23 Sprite 16x16 - BLANK -(ALTO/HIGH)
+	dd $007A1828 // #24 Sprite 16x16 - O -----(ALTO/HIGH)
+	dd $103B20D8 // #25 Sprite 16x16 - D -----(BAIXO/LOW)
+	dd $103D20E8 // #26 Sprite 16x16 - U -----(BAIXO/LOW)
+	dd $003F20F8 // #27 Sprite  8x8  - P -----(BAIXO/LOW)
+	dd $004F28F8 // #28 Sprite  8x8  - P -----(BAIXO/LOW)
+	dd $105B2000 // #29 Sprite 16x16 - PL ----(BAIXO/LOW)
+	dd $105D2010 // #30 Sprite 16x16 - O -----(BAIXO/LOW)
+	dd $005F2020 // #31 Sprite  8x8  - O -----(BAIXO/LOW)
+	dd $006F2820 // #32 Sprite  8x8  - O -----(BAIXO/LOW)
+	dd $007B2028 // #33 Sprite  8x8  - O -----(BAIXO/LOW)
+	dd $007C2828 // #34 Sprite  8x8  - BLANK -(BAIXO/LOW)
+//-----------------------END-----------------------------
 	dd $30F8D480 // #22 Sprite 16x16 - LU
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
