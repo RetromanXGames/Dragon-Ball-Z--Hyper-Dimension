@@ -418,23 +418,21 @@ ready_grafico_end:
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	origin $378000
 // [OPTS][Tile][Y][X]   [#]
-	dd $003900D4     //-#00 Sprite  8x8  - P ---(BAIXO/LOW)
-	dd $003A00DC     //-#01 Sprite  8x8  - PR --(BAIXO/LOW) 
-	dd $003B00E4     //-#02 Sprite  8x8  - R ---(BAIXO/LOW) 
-	dd $003C00EC     //-#03 Sprite  8x8  - O ---(BAIXO/LOW) 
-	dd $003D00F4     //-#04 Sprite  8x8  - O ---(BAIXO/LOW) 
-	dd $003E00FC     //-#05 Sprite  8x8  - N ---(BAIXO/LOW) 
-	dd $003F0004     //-#06 Sprite  8x8  - NT --(BAIXO/LOW) 
-	dd $0049000C     //-#07 Sprite  8x8  - T ---(BAIXO/LOW) 
-	dd $004A0014     //-#08 Sprite  8x8  - O ---(BAIXO/LOW) 
-	dd $004B001C     //-#09 Sprite  8x8  - O ---(BAIXO/LOW) 
-	dd $004C0024     //-#10 Sprite  8x8  - S ---(BAIXO/LOW) 
-	dd $1060F0D4     //-#17 Sprite 16X16 - P ---(ALTO/HIGH)
-	dd $1062F0E4     //-#16 Sprite 16X16 - RO --(ALTO/HIGH)
-	dd $1064F0F4     //-#15 Sprite 16X16 - ON --(ALTO/HIGH)
-	dd $1066F004     //-#14 Sprite 16X16 - T ---(ALTO/HIGH)
-	dd $1068F014     //-#13 Sprite 16X16 - O ---(ALTO/HIGH)
-	dd $106AF024     //-#12 Sprite 16X16 - S ---(ALTO/HIGH)
+	dd $103900D0     //-#00 Sprite 16X16 - P ---(BAIXO/LOW)
+	dd $103B00E0     //-#02 Sprite 16X16 - RO --(BAIXO/LOW) 
+	dd $003D00F0     //-#03 Sprite  8x8  - O ---(BAIXO/LOW) 
+	dd $003E00F8     //-#05 Sprite  8x8  - N ---(BAIXO/LOW) 
+	dd $003F0000     //-#06 Sprite  8x8  - NT --(BAIXO/LOW) 
+	dd $00590008     //-#07 Sprite  8x8  - T ---(BAIXO/LOW) 
+	dd $005A0010     //-#08 Sprite  8x8  - O ---(BAIXO/LOW) 
+	dd $005B0018     //-#09 Sprite  8x8  - O ---(BAIXO/LOW) 
+	dd $105C0020     //-#10 Sprite 16X16 - P ---(ALTO/HIGH)
+	dd $1060F0D0     //-#17 Sprite 16X16 - P ---(ALTO/HIGH)
+	dd $1062F0E0     //-#16 Sprite 16X16 - RO --(ALTO/HIGH)
+	dd $1064F0F0     //-#15 Sprite 16X16 - ON --(ALTO/HIGH)
+	dd $1066F000     //-#14 Sprite 16X16 - T ---(ALTO/HIGH)
+	dd $1068F010     //-#13 Sprite 16X16 - O ---(ALTO/HIGH)
+	dd $106AF020     //-#12 Sprite 16X16 - S ---(ALTO/HIGH)
 //-----------------------END-----------------------------
 	dd $49001880     //-END
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
