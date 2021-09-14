@@ -105,9 +105,14 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     origin $00066AB7 // Endereço da Instrução que muda o Banco convertido de PC para SNES
     lda #$00AE
-	origin $000CE388 // Endereço da Instrução que muda o Banco convertido de PC para SNES
-    lda #$00A0
-	
+	origin $000CE39A // Endereço da Instrução que muda o Banco convertido de PC para SNES
+    lda $0000,y
+	cpy $8BB4
+	beq carrega_a0
+	rts
+	carrega_a0:	 
+	lda #$00A0
+	rts
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //----------------   Pointers of Pointers Table   ---------------------------
 //--------------   Ponteiro da Tabela de Ponteiros    -----------------------
@@ -194,7 +199,7 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //---------------------   Script Soundtrack   -------------------------------
 //------------------   Script da Trilha Sonora   ----------------------------
-	origin $301000	
+	origin $301000//---$010BB4---Eendereço Original
 	include "scripts_ptbr\soundtrack_menu.asm"	
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 

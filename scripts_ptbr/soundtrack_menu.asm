@@ -104,75 +104,75 @@ soundtrack_0012:
  endstring()
 
 
-soundtrack_0013:
-    gameText("Mundo Dragon Ball")
- endstring()
-    //dd $02E602EA
- endstring()
- endstring()
-
-
-soundtrack_0014:
-    gameText("............Nativo")
- endstring()
-    //dw $02EC
- endstring()
- endstring()
-
-
-soundtrack_0015:
-    gameText(".............Tomar")
- endstring()
-    //db $03
- endstring()
- endstring()
-
-
-soundtrack_0016:
-    gameText(".Feliz por Você")
- endstring()
-    //dd $4402E602
-    //db $03
- endstring()
- endstring()
-
-
-soundtrack_0017:
-    gameText("..........Querido")
- endstring() 
-    //db $03
- endstring()
- endstring()
-
-
-soundtrack_0018:
-    gameText(".Primeira Cena")
- endstring()
-    //dl $02C202
- endstring()
- endstring()
-
-
-soundtrack_0019:
-    gameText("......Sem Título")
- endstring()
-    //dw $02EA
- endstring()
- endstring()
-
-
-soundtrack_0020:
-    gameText(".......Aleatória")
- endstring()
-    //dd $0C032002
-    //db $03
- endstring()
- endstring()
-
-
-soundtrack_0021:
-    gameText(".........Desligar")
- endstring()
-    db $02
- endstring()
- endstring()
+//soundtrack_0013:
+//    gameText("Mundo Dragon Ball")
+// endstring()
+//    //dd $02E602EA
+// endstring()
+// endstring()
+//
+//
+//soundtrack_0014:
+//    gameText("............Nativo")
+// endstring()
+//    //dw $02EC
+// endstring()
+// endstring()
+//
+//
+//soundtrack_0015:
+//    gameText(".............Tomar")
+// endstring()
+//    //db $03
+// endstring()
+// endstring()
+//
+//
+//soundtrack_0016:
+//    gameText(".Feliz por Você")
+// endstring()
+//    //dd $4402E602
+//    //db $03
+// endstring()
+// endstring()
+//
+//
+//soundtrack_0017:
+//    gameText("..........Querido")
+// endstring() 
+//    //db $03
+// endstring()
+// endstring()
+//
+//
+//soundtrack_0018:
+//    gameText(".Primeira Cena")
+// endstring()
+//    //dl $02C202
+// endstring()
+// endstring()
+//
+//
+//soundtrack_0019:
+//    gameText("......Sem Título")
+// endstring()
+//    //dw $02EA
+// endstring()
+// endstring()
+//
+//
+//soundtrack_0020:
+//    gameText(".......Aleatória")
+// endstring()
+//    //dd $0C032002
+//    //db $03
+// endstring()
+// endstring()
+//
+//
+//soundtrack_0021:
+//    gameText(".........Desligar")
+// endstring()
+//    db $02
+// endstring()
+// endstring()
