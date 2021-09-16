@@ -315,7 +315,7 @@ newline()
 
 
 script_versus_0036:
-    gameText("            Pessoal, muito obrigado!y")
+    gameText("            Pessoal, muito obrigado!")
  endstring()
 
 
