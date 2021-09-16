@@ -310,7 +310,7 @@ script_versus_0034:
 script_versus_0035:
     gameText("               Hmph... ")
 newline()
-    gameText("               Que tornei idiota!")
+    gameText("               Que torneio idiota!")
  endstring()
 
 
