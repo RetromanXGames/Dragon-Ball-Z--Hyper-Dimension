@@ -13,7 +13,7 @@ script_versus_0001:
 
 
 script_versus_0002:
-    gameText("                Gohan, pelo visto vocêo ")
+    gameText("                Gohan, pelo visto você ")
  newline()
     gameText("                não andou treinando nada, ")
 newline()
@@ -22,7 +22,7 @@ newline()
 
 
 script_versus_0003:
-    gameText("                O treinamnto deu certo.")
+    gameText("                O treinamento deu certo.")
  newline()
     gameText("                O nível de seus poderes")
  newline()
@@ -37,7 +37,7 @@ script_versus_0004:
  newline()
     gameText("             mais pessoas mortas em")
 newline()
-    gameText("             sua  consciência!")
+    gameText("             sua consciência!")
  endstring()
 
 
