@@ -13,7 +13,7 @@ script_versus_0001:
 
 
 script_versus_0002:
-    gameText("                Gohan, pelo visto você ")
+    gameText("                Gohan, pelo visto vocêo ")
  newline()
     gameText("                não andou treinando nada, ")
 newline()
