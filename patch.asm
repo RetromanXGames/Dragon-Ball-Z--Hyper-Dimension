@@ -105,16 +105,16 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     origin $00066AB7 // Endereço da Instrução que muda o Banco convertido de PC para SNES
     lda #$00AE
-	//origin $000CEAB7 // Endereço da Instrução que muda o Banco convertido de PC para SNES
-    //lda #$0060
-	//origin $000CE39A // Endereço da Instrução que muda o Banco convertido de PC para SNES
-    lda $0000,y
-	cpy $8BB4
-	beq carrega_a0
-	rts
-	carrega_a0:	 
-	lda #$00A0
-	rts
+	////origin $000CEAB7 // Endereço da Instrução que muda o Banco convertido de PC para SNES
+    ////lda #$0060
+	////origin $000CE39A // Endereço da Instrução que muda o Banco convertido de PC para SNES
+    //lda $0000,y
+	//cpy $8BB4
+	//beq carrega_a0
+	//rts
+	//carrega_a0:	 
+	//lda #$00A0
+	//rts
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //----------------   Pointers of Pointers Table   ---------------------------
 //--------------   Ponteiro da Tabela de Ponteiros    -----------------------
@@ -133,7 +133,7 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
 //---------------------   Script History Mode   -----------------------------
 //-------------------   Script do modo História   ---------------------------
-	origin $371000
+	origin $370200
     include "scripts_ptbr\history.asm"
 //---------------  Script End of Battle in Versus Mode  ---------------------
 //-------------  Script do Fim da Batalho no Modo Versus   ------------------
@@ -191,6 +191,8 @@
 	origin $010B1E	
 	include "scripts_ptbr\option.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //------------------   Soundtrack Pointers Table   --------------------------
 //---------------  Tabela Ponteiros da Trilha Sonora   ----------------------
@@ -201,7 +203,7 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //---------------------   Script Soundtrack   -------------------------------
 //------------------   Script da Trilha Sonora   ----------------------------
-	origin $301000//---$010BB4---Eendereço Original
+	origin $3746C0//---$010BB4---Eendereço Original
 	include "scripts_ptbr\soundtrack_menu.asm"	
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
