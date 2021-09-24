@@ -13,7 +13,7 @@ script_history_0000:
      gameText("mortos pelos Sayajins... ")
  newline()
  newline()
-     gameText("Enquanto isso Buma e os ")
+     gameText("Enquanto isso Bulma e os ")
  newline()
     gameText("outros recolhiam os corpos ")
  newline()
