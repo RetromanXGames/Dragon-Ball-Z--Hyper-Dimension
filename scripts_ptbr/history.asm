@@ -10,7 +10,7 @@ script_history_0000:
     gameText("e até mesmo Piccolo foram ")
  newline()
  paragraph()
-     gameText("mortos pelos Sayajins..... ")
+     gameText("mortos pelos Sayajins...... ")
  newline()
  newline()
      gameText("Enquanto isso Bulma e os ")
