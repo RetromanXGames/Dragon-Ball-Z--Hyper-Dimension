@@ -89,7 +89,6 @@
 	//jml	   $00FF12 // Retorno para o Fluxo
 	//origin $350000
 	//insert "splash\splash.asm"
-	
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
 
 
@@ -198,12 +197,12 @@
 //---------------  Tabela Ponteiros da Trilha Sonora   ----------------------
 	origin $010B8C 
     include "asm\pointers_soundtrack_menu.asm"
-	origin $013e5e 
-    include "asm\pointers_soundtrack_menu.asm"
+	origin $013E60 
+    include "asm\pointers_soundtrack_menu_vs.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //---------------------   Script Soundtrack   -------------------------------
 //------------------   Script da Trilha Sonora   ----------------------------
-	origin $3746C0//---$010BB4---Eendereço Original
+	origin $010BB4  //$3746C0------Eendereço Original
 	include "scripts_ptbr\soundtrack_menu.asm"	
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
