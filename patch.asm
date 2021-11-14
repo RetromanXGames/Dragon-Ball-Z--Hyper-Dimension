@@ -66,9 +66,9 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     include "asm\Constantes.asm"
 	include "asm\macro.asm"
-    include "lib/snes.asm"                                     
-    //include "lib/snes_header.asm"                           
-    include "lib/snes_gfx.asm"                                
+    include "lib\snes.asm"                                     
+    //include "lib\snes_header.asm"                           
+    include "lib\snes_gfx.asm"                                
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
 
 
@@ -133,7 +133,7 @@
 //---------------------   Script History Mode   -----------------------------
 //-------------------   Script do modo História   ---------------------------
 	origin $370200
-    include "scripts_ptbr\history.asm"
+    include "scripts_ptbr\history_anime.asm"
 //---------------  Script End of Battle in Versus Mode  ---------------------
 //-------------  Script do Fim da Batalho no Modo Versus   ------------------
     include "scripts_ptbr\vs_end_battle.asm"
@@ -271,7 +271,7 @@
 //xxxxxxxxxxxxxxxxxxxxxxxx    Names    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //--------------------   Character Names    ---------------------------------	
 //-----------------   Nomes dos Personagens    ------------------------------
-    origin $E000
+    origin $00E000
 	insert "gfx_ptbr\names.bin"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
 
@@ -279,7 +279,7 @@
 //xxxxxxxxxxxxxxxxxxxxx   Combat Status   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //---------------------   WIN/LOOSE/DRAW   ----------------------------------	
 //----------------   Vitórias/Derrotas/Empates   ----------------------------
-    origin $D800
+    origin $00D800
 	insert "gfx_ptbr\win_lose_draw.bin"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -295,46 +295,46 @@
 //xxxxxxxxxxxxxxxxxxxxxxx    Options    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //---------------------------  BGM    ---------------------------------------	
 //----------------------  Trilha Sonora  ------------------------------------
-    origin $CC40
+    origin $00CC40
 	insert "gfx_ptbr\bgm.bin"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //--------------------------  Effect  ---------------------------------------	
 //--------------------------  Efeito  ---------------------------------------
-    origin $C9E0
+    origin $0C9E0
 	insert "gfx_ptbr\effect.bin"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //-------------------------  Blow Back  -------------------------------------	
 //------------------------  Contragolpe  ------------------------------------
-    origin $C760
+    origin $00C760
 	insert "gfx_ptbr\blow_back.bin"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //-------------------------  Rush Battle  -----------------------------------	
 //------------------------  Batalha Rápida  ---------------------------------
-    origin $C4E0
+    origin $00C4E0
 	insert "gfx_ptbr\rush_battle.bin"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //-------------------------  Stage Color  -----------------------------------	
 //------------------------  Cor do Estágio  ---------------------------------
-    origin $C240
+    origin $00C240
 	insert "gfx_ptbr\stage_color.bin"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //-----------------------------  BGM  ---------------------------------------	
 //-----------------------------  SOM  ---------------------------------------
-    origin $C000
+    origin $00C000
 	insert "gfx_ptbr\som.bin"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	
 	
 //xxxxxxxxxxxxxxxxxxxxxxxxxx    Title    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //----------------------------  Título  -------------------------------------
-    origin $77000
+    origin $077000
 	insert "gfx_ptbr\title.bin"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxx    Names 2    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //----------------------------  Nomes 2  ------------------------------------
-    origin $6000
+    origin $006000
 	insert "gfx_ptbr\names2.bin"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -377,16 +377,16 @@ hyperdiminension_grafico_end:
 //--------------   Deviation from P1 and P2     -----------------
 //---------------   Desvio do Gráfico Hyper Dimension     -------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//    origin $011F5D  // Endereço de Origem do Desvio Convertido do Endereço SNES
-//  	jml    $A1CE00  // Desvio
-//	
-//	origin $30CA00 // <-- DMA SRC
-//p1_p2_grafico:
-//	insert "gfx_ptbr\p1_p2.bin"
-//p1_p2_grafico_end:
-//
-//    origin $30CE00
-//	include "asm\p1_p2.asm"
+    origin $011F53  // Endereço de Origem do Desvio Convertido do Endereço SNES
+  	jml    $A1CE00  // Desvio
+	
+	origin $30CA00 // <-- DMA SRC
+p1_p2_grafico:
+	insert "gfx_ptbr\p1_p2.bin"
+p1_p2_grafico_end:
+
+    origin $30CE00
+	include "asm\p1_p2.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -582,31 +582,31 @@ ready_grafico_end:
 //---------------   Deviation from Game Over Graph   ------------------------
 //-----------------   Desvio do Gráfico Game Over   -------------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    origin $016758
-  	jml    $A0C800
+    origin $01674E
+  	jml    $A08000
 	
-	origin $304000
+	origin $300600
 game_over_grafico:
-	insert "gfx_ptbr\game_over_2.bin"
+	insert "gfx_ptbr\game_over.bin"
 game_over_grafico_end:
 
-    origin $304800
+    origin $300000
 	include "asm\game_over.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //---------------   Tilemap Deviation from Game Over     --------------------
 //----------------   Desvio do Tilemap do Game Over     ---------------------
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //
-//	  origin $01018A
-//    jml    $A0E560
-//    origin $306100
-//endian msb
+//	origin $01018A
+//    jml    $A00000
+//    
+//	origin $300600
 //tilemap_ready:
 //insert "tilemap\game_over.bin"
 //tilemap_ready_end:
-//endian lsb
-// origin $306560
-//include "asm\tilemap_game_over.asm"
+//
+//	origin $300000
+//	include "asm\tilemap_game_over.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -626,3 +626,29 @@ torneio_grafico_end:
 	include "asm\martial_arts_tournament.asm"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
+//xxxxxxxxxxxxxxxxxxxxxxxxx   CUTSCENES   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//    origin $016340
+//  	jml    $A1EC00
+//	
+//	origin $30D000
+//
+//	insert dbzhd_freeza_001_kuririn_dead, "cutscenes\dbzhd_freeza_001_kuririn_dead.bin"
+//
+//origin $30E200
+//dbzhd_freeza_001_kuririn_dead_palette:
+//	insert "cutscenes\dbzhd_freeza_001_kuririn_dead_palette.bin"
+//dbzhd_freeza_001_kuririn_dead_palette_end:
+//
+//origin $30E400
+//dbzhd_freeza_001_kuririn_dead_tilemap:
+//	insert "cutscenes\dbzhd_freeza_001_kuririn_dead_3.bin"
+//dbzhd_freeza_001_kuririn_dead_tilemap_end:
+//
+//    origin $30EC00
+//	include "asm\cutscenes_freeza_001_kuririn_dead.asm"
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
