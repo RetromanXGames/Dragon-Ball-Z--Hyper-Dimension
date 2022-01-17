@@ -577,6 +577,68 @@ ready_grafico_end:
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//------------------   Tilemap from Sprites FIGHT   -------------------------
+//------------------   Tilemap dos Sprites LUTEM!   -------------------------
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	origin $035AA1
+// [OPTS][Tile][Y][X]   [#]
+    dd $00290014    //-#00 Sprite  8x8  - J
+	dd $0020F814    //-#00 Sprite  8x8  - J
+	dd $002A001F    //-#00 Sprite  8x8  - O1  
+	dd $0021F81F    //-#00 Sprite  8x8  - O1 
+	dd $003C001F    //-#00 Sprite  8x8  - O1  
+	dd $0033F81F    //-#00 Sprite  8x8  - O1  
+	dd $003B0014    //-#00 Sprite  8x8  - J
+	dd $0032F814    //-#00 Sprite  8x8  - J
+	dd $00280003    //-#00 Sprite  8x8  - E 
+	dd $001FF803    //-#00 Sprite  8x8  - E   
+	dd $003A0003    //-#00 Sprite  8x8  - E  
+	dd $0031F803    //-#00 Sprite  8x8  - E   
+	dd $003600D3    //-#00 Sprite  8x8  - F   
+	dd $002DF8D3    //-#00 Sprite  8x8  - F  
+	dd $003700DE    //-#00 Sprite  8x8  - I 
+	dd $002EF8DE    //-#00 Sprite  8x8  - I   
+	dd $003900F8    //-#00 Sprite  8x8  - D
+	dd $003800E5    //-#00 Sprite  8x8  - M
+	dd $0030F8F8    //-#00 Sprite  8x8  - D
+	dd $002FF8E5    //-#00 Sprite  8x8  - M
+	dd $003D002A    //-#00 Sprite  8x8  - G  
+	dd $0034F82A    //-#00 Sprite  8x8  - G  
+	dd $003E0035    //-#00 Sprite  8x8  - O2 
+	dd $0035F835    //-#00 Sprite  8x8  - O2 
+	dd $002C0035    //-#00 Sprite  8x8  - O2
+	dd $0023F835    //-#00 Sprite  8x8  - O2 
+	dd $002B002A    //-#00 Sprite  8x8  - G  
+	dd $0022F82A    //-#00 Sprite  8x8  - G  
+	dd $002700F8    //-#00 Sprite  8x8  - D  
+	dd $002600E5    //-#00 Sprite  8x8  - M  
+	dd $001EF8F8    //-#00 Sprite  8x8  - D  
+	dd $001DF8E5    //-#00 Sprite  8x8  - M  
+	dd $002500DE    //-#00 Sprite  8x8  - I  
+	dd $001CF8DE    //-#00 Sprite  8x8  - I  
+	dd $002400D3    //-#00 Sprite  8x8  - F  
+	dd $001BF8D3    //-#00 Sprite  8x8  - F  
+	dd $001A0035    //-#00 Sprite  8x8  - O2  
+	dd $0019002A    //-#00 Sprite  8x8  - G  
+	dd $0018001F    //-#00 Sprite  8x8  - O1  
+	dd $00170014    //-#00 Sprite  8x8  - J
+	dd $0011F835    //-#00 Sprite  8x8  - O2  
+	dd $0010F82A    //-#00 Sprite  8x8  - G  
+	dd $000FF81F    //-#00 Sprite  8x8  - O1  
+	dd $000EF814    //-#00 Sprite  8x8  - J
+	dd $00160003    //-#00 Sprite  8x8  - E  
+	dd $001500F8    //-#00 Sprite  8x8  - D  
+	dd $001400E5    //-#00 Sprite  8x8  - M  
+	dd $001300DE    //-#00 Sprite  8x8  - I  
+	dd $001200D3    //-#00 Sprite  8x8  - F  
+	dd $000DF803    //-#00 Sprite  8x8  - E  
+	dd $000CF8F8    //-#00 Sprite  8x8  - D  
+	dd $000BF8E5    //-#00 Sprite  8x8  - M  
+	dd $000AF8DE    //-#00 Sprite  8x8  - I  
+	dd $0009F8D3    //-#00 Sprite  8x8  - F
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	
 //---------------   Deviation from Game Over Graph   ------------------------
