@@ -1,3 +1,4 @@
+dw (credits_0000 & $FFFF) + $8000
 dw (credits_0001 & $FFFF) + $8000
 dw (credits_0002 & $FFFF) + $8000
 dw (credits_0003 & $FFFF) + $8000
@@ -29,3 +30,4 @@ dw (credits_0028 & $FFFF) + $8000
 dw (credits_0029 & $FFFF) + $8000
 dw (credits_0030 & $FFFF) + $8000
 dw (credits_0031 & $FFFF) + $8000
+dw (credits_0032 & $FFFF) + $8000

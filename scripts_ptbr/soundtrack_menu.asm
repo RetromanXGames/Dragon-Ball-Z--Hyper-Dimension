@@ -87,20 +87,20 @@ soundtrack_0017:
  endstring()
 
 soundtrack_0018:
-    gameText(".Primeira Cena")
+    gameText(".Primeira Cena   ")
  endstring()
 
 
 soundtrack_0019:
-    gameText("......Sem Título")
+    gameText("......Sem Título ")
  endstring()
 
 
 soundtrack_0020:
-   gameText(".......Aleatória")
+   gameText(".......Aleatória ")
  endstring()
 
 
 soundtrack_0021:
-    gameText(".........Desligar")
+    gameText(".........Desligar ")
  endstring()

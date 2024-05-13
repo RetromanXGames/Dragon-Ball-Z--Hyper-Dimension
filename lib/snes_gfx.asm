@@ -2,6 +2,34 @@
 // SNES Graphics
 //===============
 
+
+//==================================
+// LoadWRAM - Load Data To WRAM
+//==================================
+//  SRC: 24-Bit Address Of Source Data
+// DEST: 16-Bit WRAM Destination (WORD Address)
+// DESTBANK: 8-Bit WRAM Bank Destination (WORD Address)
+// SIZE: Size Of Data (BYTE Size)
+// CHAN: DMA Channel To Transfer Data (0..7)
+macro LoadWRAM(SRC, SRCB, SIZE, DEST, DESTB, CHAN) {
+  ldx.w #{SRC}          // Get lower 16-bits of source ptr
+  stx.w REG_A1T0L       // Set source offset
+  lda.b #{SRCB}         // Get upper 8-bits of source ptr
+  sta.w REG_A1B0        // Set source bank
+  ldx.w #{SIZE}         // Size in bytes
+  stx.w REG_DAS0L       // Set transfer size in bytes
+  ldx.w #{DEST}         // Get lower 16-bits of destination ptr
+  stx.w REG_WMADDL      // Set WRAM offset
+  ldx.w #{DESTB}        // Get upper 8-bits of dest ptr
+  stx.w REG_WMADDH      // Set WRAM bank (only LSB is significant)
+  lda.b #$80            // Set Increment VRAM Address After Accessing Hi Byte
+  sta.w REG_BBAD0       //--DMA destination is $2180
+  stz $4300             //--Write mode=0, 1 byte to $2180
+  lda.b #$01            //--DMA transfer mode=auto increment
+  sta.w REG_MDMAEN      //--Initiate transfer using channel 0
+}
+
+
 //=============================
 // WaitNMI - Wait For NMI Flag
 //=============================

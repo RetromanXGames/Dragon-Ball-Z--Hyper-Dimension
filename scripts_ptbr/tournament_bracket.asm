@@ -1,58 +1,42 @@
 tournament_bracket_0000:
-    gameText("  Combate  ")
- characterNumberOne()
-    gameText(" ")
- newline()
-    gameText("     ")
- characterNumberTwo()
-    gameText("VS    ")
- characterNumberThree()
-    gameText(" ")
- endstring()
-
+    gameText("┌    Combate ")
+    db $F5, $05
+    gameText("   (┐2)")
+newline()
+    gameText("└    ")
+    db $F5, $03
+    gameText("       VS")
+    db $F5, $04
+    gameText("         (┘1)")
+endstring()
 
 tournament_bracket_0001:
-    gameText("  ")
- null()
- nullA()
- nullB()
- nullC()
- nullD() 
- endstring()
- endstring()
-
+    db $00, $00, $C4, $40, $00, $00, $22, $03, $00, $00, $2E, $03, $28, $03, $00, $00, $00, $00, $22, $03, $C4, $00
+endstring()
+endstring()
 
 tournament_bracket_0002:
-    gameText(" Ultimo Combate ")
+    gameText("┌     Ultima Luta   ┐")
 newline()
-    gameText("      ")
- characterNumberThree()
-    gameText("VS      ")
- endstring()
-
+    gameText("└     ")
+    db $F5, $04
+    gameText("        VS            ┘")
+endstring()
 
 tournament_bracket_0003:
-    gameText("   ")
- null()
- nullA()
- nullB()
- nullC()
- nullD()  
- endstring()
- endstring()
-
+    db $00, $00, $00, $C4, $40, $00, $00, $22, $03, $00, $00, $2E, $03, $28, $03, $00, $00, $00, $00, $22, $03, $C4, $00 
+endstring()
+endstring()
 
 tournament_bracket_0004:
-    gameText("E o campeão é")
+    gameText("┌( +)  E o campeão( +) ┐")
 newline()
-    gameText("               ")
- characterNumberThree()
-    gameText(" ")
- endstring()
- nullE()
- nullF()
- nullG()
- nullH()
- nullI()
- endstring()
- endstring()
+    gameText("└( +)( +)( +)é...")
+    db $F5, $04
+    gameText("( +)( +)  ┘")
+endstring()
+
+tournament_bracket_0005:
+    db $00, $00, $00, $00, $E6, $03, $E8, $03, $EA, $03, $EC, $03, $00, $00, $00, $00, $C4, $00
+endstring()
+endstring()

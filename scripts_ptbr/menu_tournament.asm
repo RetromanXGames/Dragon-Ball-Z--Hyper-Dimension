@@ -1,11 +1,11 @@
 menu_tournament:    
-    gameText("(UP/DOWN): Selecionar")
+    gameText("(UP)(DOWN) : Selecionar")
  newline()
  newline()
 
-    gameText("Botão y : CPU")
+    gameText("Botão Y : CPU")
  newline()
  newline()
 
-    gameText("Botão x : Aleatório")
+    gameText("Botão X : Aleatório")
  endstring()

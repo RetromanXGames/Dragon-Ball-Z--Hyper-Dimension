@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Adding an SNES Intro (with a few clicks)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<style type="text/css">
+<!--
+body,td,th {
+	font-size: 16px;
+	color: #000000;
+}
+body {
+	background-color: #FFFFFF;
+}
+.style1 {
+	font-size: 36px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style2 {
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style3 {
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style4 {
+	font-size: 18px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style5 {font-family: Arial, Helvetica, sans-serif}
+.style6 {font-weight: bold; font-size: 18px;}
+-->
+</style></head>
+
+<body>
+<div align="center">
+  <p class="style1">Adding an SNES Intro (with a few clicks)</p>
+  <p class="style2">by DaMarsMan (DaMarsMan@gmail.com)</p>
+  <p class="style2">Kojiro Translations 2006</p>
+  <p class="style2">http://www.crossfire-radio.com/kojiro/site/</p>
+  <p class="style2">&nbsp;</p>
+  <p align="left" class="style2 style3"> I'm writing this tutorial because I have found an easy way of adding your own intro to an snes rom with the use of some other peoples tools. That doesn't, however, mean that I want poeple to read this and think that because they can click a few times and add an intro that they somehow have hacking experience. I'm a big supporter of new poeple in the scene learning why things work the way they do and not just how to duplicate something. Either way, let's get started so we can have an intro soon. </p>
+  <p align="left" class="style4">Things you will need include. (don't ask me where to get them, most can be found on romhacking.net) </p>
+  <p align="left" class="style4">-Geiger's Snes9x debugger</p>
+  <p align="left" class="style4">-xkas assembler (byuu.org)</p>
+  <p align="left" class="style4">-A rom that you wish to add the intro to.</p>
+  <p align="left" class="style4">-LunarAddress (converts between regular hex and snes adresses) </p>
+  <p align="left" class="style4">-LunarExpand (expands a rom if you need room to insert the intro picture and data)</p>
+  <p align="left" class="style4">-A hex editor (I will use Translhextion even though most despise it. =) ) </p>
+  <p align="left" class="style4">-A program to convert to gif. I'll use xnview as it keeps color quality great. (http://www.xnview.com) </p>
+  <p align="left" class="style4">-The intro code file for xkas assembler. Found <a href="Intro.zip">here</a>. </p>
+  <p align="left" class="style4">-pic2snes (converts gif image to snes data)</p>
+  <p align="left" class="style4">&nbsp;</p>
+  <p align="left" class="style4">First of all, let's start out by making we have enough room in our rom for our intro data. Open up the rom and look towards the end for an area with all 00s. If you don't have room use LunarExpand to double your rom size. Then pic a spot where you want the the intro by opening it up in the hex editor. If you expanded the rom then anything in the expanded area is a good spot. Load up LunarAdress. This is how we will determine if our ROM uses LoRom addressing or HiRom. You don't really need to understand how these work to finish this. My Rom in this example is a LoRom.</p>
+  <p align="center" class="style4"><img src="lunar.PNG" width="652" height="376"></p>
+  <p align="left" class="style4">&nbsp;</p>
+  <p align="left" class="style4">Now that you know how to convert, take the spot you want the picture data and look at it in your hex editor. Paste the hex address on the pc side and it will give you the snes address. Pretty nifty. Open up the Intro.asm file in Wordpad that's included in the zip.</p>
+  <p align="left" class="style4">You should see...</p>
+  <p align="left" class="style2">&nbsp;</p>
+  <p align="left" class="style2">;variable locations (these are lowrom addresses) (these addresses should match the ones on the include below)</p>
+  <p align="left" class="style5">!CodeOffset = $39C000</p>
+  <p align="left" class="style5">!SetBank = #$30<br>
+    !SetBank2 = #$31 ;should always be 1 more than SetBank1 (not sure if it's same with HiRom)<br>
+    !SetOffset = #$8000</p>
+  <p align="left" class="style5">!MapBank = #$32<br>
+    !MapOffset = #$8000</p>
+  <p align="left" class="style5">!ColBank = #$32<br>
+    !ColOffset = #$9000</p>
+  <p align="left" class="style5">;includes for intro <br>
+    org $308000<br>
+    incbin introfiles/intro.set</p>
+  <p align="left" class="style5">org $328000<br>
+    incbin introfiles/intro.map</p>
+  <p align="left" class="style5">org $329000<br>
+    incbin introfiles/intro.col</p>
+  <p align="left" class="style4">&nbsp;</p>
+  <p align="left" class="style4">You should change all those numbers to the areas you want to use. So find space for the 3 files we are going to be adding and the code for the new intro. Any blank space will do if you expanded the rom but just make sure you give your self room for each file. You can see how I spaced mine out above. So if you choose these positions....</p>
+  <p align="left" class="style4">Code Location = 90000 in hex or 12:8000 in snes (if ROM is LoRom) </p>
+  <p align="left" class="style4">Set Location = A0000 in hex or 14:8000 in snes (if ROM is LoRom) </p>
+  <p align="left" class="style4">Map Locatoin = B0000 in hex or 16:8000 in snes (if ROM is LoRom) </p>
+  <p align="left" class="style4">Color Palette Location = C0000 in hex or 18:8000 in snes (if ROM is LoRom) </p>
+  <p align="left" class="style4">Those would be the numbers you change in Intro.asm . So it should now look like this. </p>
+  <p align="left" class="style2">&nbsp;</p>
+  <p align="left" class="style5">!CodeOffset = $128000</p>
+  <p align="left" class="style5">!SetBank = #$14<br>
+  !SetBank2 = #$15 ;should always be 1 more than SetBank1 (not sure if it's same with HiRom)<br>
+  !SetOffset = #$8000</p>
+  <p align="left" class="style5">!MapBank = #$16<br>
+  !MapOffset = #$8000</p>
+  <p align="left" class="style5">!ColBank = #$18<br>
+  !ColOffset = #$9000</p>
+  <p align="left" class="style5">;includes for intro <br>
+  org $148000<br>
+  incbin introfiles/intro.set</p>
+  <p align="left" class="style5">org $168000<br>
+  incbin introfiles/intro.map</p>
+  <p align="left" class="style5">org $188000<br>
+  incbin introfiles/intro.col</p>
+  <p align="left" class="style5"><span class="style6">So I hope I made that pretty easy to follow. The key is that they match. The first part sets the variables and the second adds the files we are going to make to the rom. </span></p>
+  <p align="left" class="style5"><span class="style6">Our next step is to make our intro screen and get it in snes format. Take the Intro.png from the Intro.zip for example that I used in my GoH3 project. Right click and open it in paint. Save it how you want it but keep it in png format and 256x224. Now we need to convert that to gif. Open up XnView and go to the directory with intro.png. Right click intro.png and click batch convert. Then click options as seen below and make sure that Gif87a is checked under the gif category (very important).</span></p>
+  <p align="center" class="style5"><img src="gifoptions.PNG" width="958" height="495"></p>
+  <p align="left" class="style5">&nbsp;</p>
+  <p align="left" class="style5"><span class="style6">Then choose 256 as color mode after clicking ok. </span></p>
+  <p align="left" class="style5"><img src="colormode.PNG" width="301" height="333"></p>
+  <p align="left" class="style5"><span class="style6">If everything went well you should have an intro.gif now in the folder. Right click in the directory where your rom is to create a folder called &quot;introfiles&quot;. This is where we will keep the final snes files. Add the intro.gif to the introfiles folder. Then run gif2sopt.exe. This file is included with the pic2snes program you can get a romhacking.net. You will be prompted four times. Enter &quot;intro&quot; without the quotes for times. It will conver intro.gif to 3 files (intro.set, intro.map, intro.col). Keep these files in the introfiles directory or else our Intro.asm code won't be able to find them. One more last thing to do. In Intro.asm scroll down towards the bottom where you see this...</span></p>
+  <p align="left" class="style5">;old code from beginning of unchanged rom <br>
+    CLC	<br>
+    XCE<br>
+    SEI<br>
+    REP #$10<br>
+  JMP.l $008005 ;jump to fifth instruction</p>
+  <p align="left" class="style5"><span class="style6">This code is all the instructions you are going to overwrite with our JMP opcode at the beginning of the Intro.asm. Open up Geiger's debugger and click Step Into about five times with your rom loaded. In the window you will see something like this....</span></p>
+  <p align="center" class="style5"><img src="debugger.PNG" width="558" height="390"></p>
+  <p align="left" class="style5"><span class="style6">You need to add the first four instructions on the debugger screen to the Intro.asm and change the JMP.l $008005 to the location of the fifth instruction. Don't forget to delete my first four. It's going to be different depending on the game. Now extract xkas.exe to the folder with the rom. Right click Intro.bat and click edit or open in Wordpad and make sure to change the rom.smc to the name of your rom. </span></p>
+  <p align="left" class="style5"><span class="style6">So now you should have these folders and directories. </span></p>
+  <p align="left" class="style5">Your folder\intro.png</p>
+  <p align="left" class="style5">Your folder\rom.smc (whatever your rom is named)</p>
+  <p align="left" class="style5">Your folder\xkas.exe</p>
+  <p align="left" class="style5">Your folder\Intro.asm</p>
+  <p align="left" class="style5">Your folder\Intro.bat </p>
+  <p align="left" class="style5">Your folder\introfiles</p>
+  <p align="left" class="style5">Your folder\introfiles\intro.map</p>
+  <p align="left" class="style5">Your folder\introfiles\intro.col</p>
+  <p align="left" class="style5">Your folder\introfiles\intro.set</p>
+  <p align="left" class="style5">Your folder\introfiles\intro.gif</p>
+  <p align="left" class="style5"><span class="style6">Now all you should have to do is double click your Intro.bat file and it will insert the intro. Run in the debugger to make sure everything went ok. </span></p>
+  <p align="left" class="style5"><span class="style6">On a side note, you can change whether or not you have to press a key to exit the intro. To do this edit the line in Intro.asm where it looks like below. Comment out which ever you don't want. This one is to wait for key press from joypad1. </span></p>
+  <p align="left" class="style5">;Get key press or not<br>
+    ;BNE Jump3 ;don't wait for keypress<br>
+    BRA Jump3 ;wait for keypress<br>
+  </p>
+  <p align="left" class="style5"><span class="style6">This is what it should look like if you don't want to wait for key press and exit on a timed basis. </span> </p>
+  <p align="left" class="style5">;Get key press or not<br>
+BNE Jump3 ;don't wait for keypress<br>
+;BRA Jump3 ;wait for keypress<br>
+  </p>
+  <p align="left" class="style5"><span class="style6">That's really all there is to it. Stop by romhacking.net forums if you have questions. Or just stop by to support the scene. Thanks to everyone who made this possible and all the people who coded the tools I used.</span></p>
+  <p align="left" class="style5">&nbsp;</p>
+  <p align="left" class="style5">&nbsp; </p>
+  <p align="left" class="style5">&nbsp;</p>
+  <p align="left" class="style5">&nbsp;</p>
+  <p align="left" class="style5">&nbsp;</p>
+  <p align="left" class="style5">&nbsp; </p>
+  <p align="left" class="style5">&nbsp;</p>
+  <p align="left" class="style5">&nbsp;</p>
+  <p align="left" class="style5">&nbsp;</p>
+  <p align="left" class="style2">&nbsp;</p>
+  <p align="left" class="style2">&nbsp;  </p>
+  <p align="left" class="style5">&nbsp;</p>
+  <p align="left" class="style2">&nbsp; </p>
+  <p align="left" class="style2">&nbsp;</p>
+  <p align="left" class="style2">&nbsp;</p>
+</div>
+</body>
+</html>
