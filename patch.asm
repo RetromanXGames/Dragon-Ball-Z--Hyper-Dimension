@@ -10,7 +10,7 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxx    Thanks    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx//xxxxxxxxxxxxxxxxxxxxxxxx    Agradecimentos    xxxxxxxxxxxxxxxxxxxxxxxxxxxx//
 //--------------------------------------------------------------------------//--------------------------------------------------------------------------//
 //    I have to thank Anime_World a lot, he is a Brazilian romhacker and    //     Eu tenhos que agradecer muito ao Anime_World, ele é um romhacker     //
-//       my Sensei, thanks man, for putting up with me all this time.       // Brasilieiro e meu Sensei, obrigado man, por me aguentar todo esse tempo. //
+//       my Sensei,, thanks man, for putting up with me all this time.       // Brasilieiro e meu Sensei, obrigado man, por me aguentar todo esse tempo. //
 //              Without him I wouldn't have made it this far.               //               Sem ele eu não teria chegado tão longe.                    //
 //                                                                          //                                                                          //
 //      This project uses as a basis the English translation done by        //         Essa projeto usa como base a tradução feita para o inglês        //
