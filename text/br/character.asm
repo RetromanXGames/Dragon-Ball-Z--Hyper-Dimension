@@ -1,0 +1,41 @@
+origin $001FDC73
+text_character_01:
+    text_character("LIBERDADE, JUSTIÇA, IGUALDADE!")
+paragraph()
+    text_character("EU PARAREI QUALQUER UM QUE")
+paragraph()
+    text_character("TENTE DESTRUIR ESSAS CRENÇAS!")
+endstring()
+text_character_02:
+    text_character("NOVATO! O QUE EU TE DISSE,")
+paragraph()
+    text_character("MEU CHAPA? EU SOU O MELHOR")
+paragraph()
+    text_character("NO QUE FAÇO")
+endstring()
+text_character_03:
+    text_character("GRAÇAS A DEUS! NÃO HOUVE")
+paragraph()
+    text_character("MUITOS DANOS AOS MEUS")
+paragraph()
+    text_character("SISTEMAS EM FUNCIONAMENTO.")
+paragraph()
+    text_character("AGORA, VAMOS EMBORA!")
+endstring()
+text_character_04:
+    text_character("VOCÊ REALMENTE ACHOU QUE")
+paragraph()
+    text_character("PODERIA ME DERROTAR COM")
+paragraph()
+    text_character("MÚSCULOS? PODERÍAMOS TER")
+paragraph()
+    text_character("CONVERSADO... USE A CABEÇA!")
+endstring()
+text_character_05:
+    text_character("OK, ENTÃO PARA ONDE VAMOS")
+paragraph()
+    text_character("AGORA?")
+paragraph()
+    text_character("ESTOU PRONTO PARA QUALQUER COISA!")
+endstring()
+

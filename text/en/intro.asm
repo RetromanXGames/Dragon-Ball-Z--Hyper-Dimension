@@ -1,0 +1,55 @@
+
+text_intro_01:
+
+    text_intro("INFINITY GEMS.")
+NEW LINE
+    text_intro("THERE ARE SIX DIFFERENT")
+NEW LINE
+    text_intro("INFINITY GEMS. EACH GEM")
+NEW LINE
+    text_intro("CONTROLS ONE OF THE FORCES")
+NEW LINE
+    text_intro("OF EITHER TIME, SPACE, POWER,")
+NEW LINE
+    text_intro("REALITY, MIND, OR SOUL.")
+NEW LINE
+    text_intro("IT IS SAID THAT THE BEING")
+NEW LINE
+    text_intro("WHO OBTAINS ALL OF THE GEMS")
+NEW LINE
+    text_intro("WILL BECOME OMNIPOTENT --")
+NEW LINE
+    text_intro("RULER OF THE UNIVERSE.")
+NEWLINE
+NEWLINE
+     text_intro("SOMEONE HAS STARTED TO")
+NEW LINE
+    text_intro(" GATHER THESE SIX GEMS.")
+NEW LINE
+    text_intro(" IF THEY CAN GATHER ALL OF")
+NEW LINE
+    text_intro(" THE GEMS, THE UNIVERSE WILL")
+NEW LINE
+    text_intro(" SUFFER IN A NEW AGE OF EVIL.")
+NEW LINE
+    text_intro(" YOU MUST HELP!")
+NEW LINE
+    text_intro("ADAM WARLOCK ASKED EARTH'S")
+NEW LINE
+    text_intro("MIGHTIEST HEROES.")
+ENDSTRING
+    text_intro("KNOWING THAT THE FATE OF THE")
+NEW LINE
+    text_intro("ENTIRE UNIVERSE IS AT STAKE,")
+NEW LINE
+    text_intro("EARTH'S MIGHTIEST HEROES")
+NEW LINE
+    text_intro("ASSEMBLE TO ASSIST")
+NEW LINE
+    text_intro("ADAM WARLOCK IN PREVENTING")
+NEW LINE
+    text_intro("THE INFINITY GEMS FROM")
+NEW LINE
+    text_intro("FALLING INTO THE WRONG HANDS!")
+ENDSTRING
+    
